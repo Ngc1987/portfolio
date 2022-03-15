@@ -1,9 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import useMousePosition from '../../Hooks/useMousePosition';
-import "./Eye.css";
+import "./Eye.scss";
+
+interface Props {
+	className: string;
+	size?: string;
+	color?: string;
+}
 
 
-const Eye: React.FC = () => {
+const Eye: React.FC<Props> = ({className, size, color}) => {
 
 	// Select the eye element on the page
 	const pupille = useRef() as React.MutableRefObject<HTMLDivElement>;
@@ -16,7 +22,7 @@ const Eye: React.FC = () => {
 	const mousePosition = useMousePosition();
 	
 	useEffect(() => {
-		
+
 		// Taking the position of the pupille on the screen
 		const eyePos = pupille.current.getBoundingClientRect();
 
@@ -39,7 +45,7 @@ const Eye: React.FC = () => {
 
 	}, [ mousePosition])
 
-	// Style for the position of the pupille, who need to follow the mouse
+	// Style for the position of the pupille, who need to follow the mouse no matter where is
 	const eyeStyle = {
 		top: `${transformY < 12 ? 12 : transformY > 88 ? 88 : transformY}%`,
 		left: `${transformX < 15 ? 15 : transformX > 85 ? 85 : transformX}%`, 
@@ -48,12 +54,13 @@ const Eye: React.FC = () => {
 
 
 	return (
-		<div className="eye">
-			<div className="pupilleDiv">
+		<div className={`${className} eye ${size && size} ${color && color}`}>
+			<div ref={pupille}  className="pupilleDiv">
 				<div className="pupille"
-					ref={pupille} 
+					
 					style={eyeStyle}
 					>
+					{/* <img src={process.env.PUBLIC_URL + "assets/greeneye.svg"} alt="" /> */}
 				</div>
 			</div>
 		</div>

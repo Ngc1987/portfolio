@@ -1,0 +1,134 @@
+.stars {
+	width: 100vw;
+	height: 150vh;
+	transform: rotateZ(-39deg);
+	position: fixed;
+	z-index: 1;
+}
+
+.star {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	// width: 100px;
+	height: 2px;
+	// transform: rotateZ(45deg);
+	background: linear-gradient(-45deg, #5f91ff, rgba(0, 0, 255, 0));
+	filter: drop-shadow(0 0 6px #699bff);
+	animation: tail 3000ms ease-in-out infinite 2000ms, shooting 3000ms ease-in-out infinite 2000ms;
+	animation-delay: 5000ms;
+}
+
+.star::before, .star::after {
+	position: absolute;
+	content: "";
+	top: calc(50% - 1px);
+	right: 0;
+	height: 2px;
+	width: 0px;
+	background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #5f91ff, rgba(0, 0, 255, 0));
+	border-radius: 100%;
+	transform: translateX(50%) rotate(45deg);
+	animation: shining 3000ms ease-in-out infinite 2000ms;
+	animation-delay: 5000ms;
+}
+
+.star::after {
+	transform: translateX(50%) rotate(135deg);
+}
+
+.star:nth-child(1) {
+	top: calc(50% - 200px);
+	left: calc(50% - 300px);
+	animation-delay: 6500ms;
+}
+.star:nth-child(1)::before, .star:nth-child(1)::after {
+	animation-delay: 6500ms;
+}
+
+.star:nth-child(2) {
+	top: calc(50% - 150px);
+	left: calc(50% + 190px);
+	animation-delay: 150ms;
+}
+.star:nth-child(2)::before, .star:nth-child(2)::after {
+	animation-delay: 150ms;
+}
+
+.star:nth-child(3) {
+	top: calc(50% - 90px);
+	left: calc(50% - 200px);
+	animation-delay: 1600ms;
+}
+.star:nth-child(3)::before, .star:nth-child(3)::after {
+	animation-delay: 1600ms;
+}
+
+.star:nth-child(4) {
+	top: calc(50% - 390px);
+	left: calc(50% - 200px);
+	animation-delay: 1000ms;
+}
+.star:nth-child(4)::before, .star:nth-child(4)::after {
+	animation-delay: 1000ms;
+}
+
+.star:nth-child(5) {
+	top: calc(50% + 200px);
+	left: calc(50% + 100px);
+	animation-delay: 4500ms;
+}
+.star:nth-child(5)::before, .star:nth-child(5)::after {
+	animation-delay: 4500ms;
+}
+
+.star:nth-child(6) {
+	top: calc(50% - 250px);
+	left: calc(50% + 100px);
+	animation-delay: 2000ms;
+}
+.star:nth-child(6)::before, .star:nth-child(6)::after {
+	animation-delay: 2000ms;
+}
+
+.star:nth-child(7) {
+	top: calc(50% + 100px);
+	left: calc(50%);
+	animation-delay: 3000ms;
+}
+.star:nth-child(7)::before, .star:nth-child(7)::after {
+	animation-delay: 3000ms;
+}
+
+
+/* Animations */
+@keyframes tail {
+	0% {
+		width: 0;
+	}
+	30% {
+		width: 100px;
+	}
+	100% {
+		width: 0;
+	}
+}
+@keyframes shining {
+	0% {
+		width: 1px;
+	}
+	50% {
+		width: 20px;
+	}
+	100% {
+		width: 1px;
+	}
+}
+@keyframes shooting {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(320px);
+	}
+}

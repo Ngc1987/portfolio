@@ -1,0 +1,16 @@
+.alien {
+	position: relative;
+
+	&__eye {
+		position: absolute;
+		left: 50.1%;
+		transform: translate(-50%, -39%);
+		top: 38.8%;
+	}
+	&__secondEye {
+		position: absolute;
+		left: 52.8%;
+		transform: translate(-50%, -39%);
+		top: 21.5%;
+	}
+}

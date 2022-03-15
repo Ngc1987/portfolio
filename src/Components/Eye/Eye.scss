@@ -1,0 +1,47 @@
+.eye {
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	// position: absolute;
+	// left: 50%;
+	// transform: translate(-50%, -39%);
+	// top: 39%;
+}
+.pupilleDiv {
+	// background-color: rgba(53, 112, 151, 0.446);
+	border-radius: 50%;
+	width: 80%;
+	height: 80%;
+	position: relative;
+}
+.pupille {
+	width: 12px;
+	height: 12px;
+	background-color: #000;
+	border-radius: 50%;
+	position: absolute;
+	/* transition: all 0.1s ease-in-out; */
+	/* left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%); */
+}
+
+.small {
+	width: 28px;
+	height: 28px;
+	
+	.pupilleDiv {
+		// background-color: rgba(53, 63, 151, 0.446);
+
+		.pupille {
+			width: 10px;
+			height: 10px;
+		}
+		
+	}
+
+}

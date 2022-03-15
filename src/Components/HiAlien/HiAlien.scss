@@ -1,0 +1,10 @@
+.hiAlien {
+	position: relative;
+
+	&__eye {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, -39%);
+		top: 38.8%;
+	}
+}
