@@ -16,8 +16,8 @@
 
 	&__content {
 		// z-index: -50;
-		opacity: 0;
-		transition: all 1s ease;
+		// opacity: 0;
+		// transition: all 1s ease;
 	}
 }
 
@@ -29,7 +29,7 @@
 	width: 100vw;
 	height: 100vh;
 	z-index: -10;
-	// filter: brightness(60%);
+	filter: brightness(80%);
 }
 
 .show {
