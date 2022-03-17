@@ -9,6 +9,10 @@ interface Props  {
 
 const HamburgerButton:React.FC<Props> = ({toggled, toggle, onToggle}) => {
 
+	const navigateur = navigator.userAgent;
+
+	console.log(navigateur)
+
 	return (
 
 		<Hamburger rounded 
@@ -17,7 +21,7 @@ const HamburgerButton:React.FC<Props> = ({toggled, toggle, onToggle}) => {
 				onToggle={onToggle}
 				size={36} 
 				duration={1} 
-				color="#fff" 
+				color={!navigateur.includes("Chrome") ?  "#5da6ff" :  "white"}
 				label="Show menu"/>
 
 	)

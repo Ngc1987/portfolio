@@ -13,6 +13,10 @@ export interface Props  {
 
 const MobileNav:React.FC<Props> = ({isOpen, setOpen, onToggle, handleOnClose}) => {
 
+	const navigateur = navigator.userAgent;
+
+	console.log(navigateur)
+
 	
 	return (
 		<>
@@ -21,7 +25,7 @@ const MobileNav:React.FC<Props> = ({isOpen, setOpen, onToggle, handleOnClose}) =
 			</div>
 
 			<Menu right 
-				className="mobileNav__menu" 
+				className={`mobileNav__menu ${!navigateur.includes("Chrome") ? "mozilla" : "others"}`}
 				pageWrapId={ "page-wrap" }
 				width={ '250px' }
 				isOpen={isOpen}
@@ -29,7 +33,7 @@ const MobileNav:React.FC<Props> = ({isOpen, setOpen, onToggle, handleOnClose}) =
 				onClose={ handleOnClose }
 				>
 
-				<h2>Navigate to</h2>
+				<h2 style={!navigateur.includes("Chrome") ? {color: "black"} : {color: "white"}} >Navigate to</h2>
 
 				<Link className="mobileNav__menu-link" 
 					to="/" 
