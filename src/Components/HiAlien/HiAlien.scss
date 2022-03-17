@@ -1,10 +1,15 @@
 .hiAlien {
 	position: relative;
+	// width: 300px;
+
+	&__img {
+		width: 100%;
+	}
 
 	&__eye {
 		position: absolute;
 		left: 50%;
 		transform: translate(-50%, -39%);
-		top: 38.8%;
+		top: 32.8%;
 	}
 }

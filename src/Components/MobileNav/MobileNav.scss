@@ -13,6 +13,9 @@
 		z-index: 600;
 		background: rgba(255, 255, 255, 0.1);
 		backdrop-filter: blur(15px);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 
 		&-overlay {
 			top: 0;
@@ -20,8 +23,8 @@
 		}
 
 		h2 {
-			margin-bottom: 40px;
-			margin-top: 50px;
+			margin-bottom: 100px;
+			margin-top: 80px;
 			color: #fff;
 			filter: drop-shadow(0px 0px 10px white);
 		}
@@ -29,37 +32,52 @@
 		&-link {
 			color: #665249;
 			height: 50px;
-			font-size: 2rem;
+			font-size: 1.4rem;
 			font-weight: bold;
-			font-family: Dancing Script;
+			// width: 100%;
+			// font-family: Dancing Script;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			vertical-align: middle;
+			// vertical-align: middle;
 			transition: all 0.3s ease;
 			text-decoration: none;
 			cursor: pointer;
 			
 			&:nth-child(2) {
 				color: #5da6ff;
-				filter: drop-shadow(0px 0px 5px #5da6ff);
+				filter: drop-shadow(0px 0px 10px #5da6ff);
 			}
 			&:nth-child(3) {
 				color: #b65dff;
-				filter: drop-shadow(0px 0px 5px #b65dff);
+				filter: drop-shadow(0px 0px 10px #b65dff);
 			}
 			&:nth-child(4) {
 				color: #ff5d6d;
-				filter: drop-shadow(0px 0px 5px #ff5d6d);
+				filter: drop-shadow(0px 0px 10px #ff5d6d);
 			}
 			&:nth-child(5) {
 				color: #ffa35d;
-				filter: drop-shadow(0px 0px 5px #ffa35d);
+				filter: drop-shadow(0px 0px 10px #ffa35d);
 			}
 			&:nth-child(6) {
 				color: #6ec444;
-				filter: drop-shadow(0px 0px 5px #6ec444);
+				filter: drop-shadow(0px 0px 10px #6ec444);
 			}
 		}
 	}
+}
+
+.bm-burger-button {
+	display: none;
+}
+
+.bm-menu {
+	width: 100%;
+}
+
+.bm-item-list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }

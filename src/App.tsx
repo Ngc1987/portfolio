@@ -5,30 +5,24 @@ import FlyingAlien from './Components/FlyingAlien/FlyingAlien';
 import Name from './Components/Name/Name';
 import Stars from './Components/Stars/Stars';
 import Earth from './Components/Earth/Earth';
+import Title from './Components/Title/Title';
 import DesktopNav from './Components/DesktopNav/DesktopNav';
 import MobileNav from './Components/MobileNav/MobileNav';
+import MobileTitle from './Components/MobileTitle/MobileTitle';
+import StyledDiv from './Components/StyledDiv/StyledDiv';
 import Home from './Pages/Home/Home';
+import MyWork from './Pages/MyWork/MyWork';
+import CV from './Pages/CV/CV';
+import About from './Pages/About/About';
+import Contact from './Pages/Contact/Contact';
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import useWindowSize from './Hooks/useWindowSize';
 
 function App() {
 
-	// state for the window size, differents animations displayed for desktop or mobile device
-	const [dimensions, setDimensions] = useState({ 
-		height: window.innerHeight,
-		width: window.innerWidth
-	})
-	// Listen resize event, and set the state with the actual values
-	useEffect(() => {
-		function handleResize() {
-			setDimensions({height: window.innerHeight, width: window.innerWidth})
-		}
-		window.addEventListener('resize', handleResize)
-	
-		return () => {
-			window.removeEventListener('resize', handleResize)
-		}
-	})
+	// Taking the window width for the size of the title element
+	const dimensions = useWindowSize();
 
 	// State for the mobile device menu
 	const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -45,38 +39,67 @@ function App() {
 	}
 
 
+	// State to show or no the title
+	const [showTitle, setShowTitle] = useState<boolean>(true);
+	
+	// State to show or no the content
+	const [showContent, setShowContent] = useState<boolean>(false);
+
+	useEffect(() => {
+		setTimeout(() => {
+			setShowTitle(false);
+			setShowContent(true)
+		}, 7000)
+	})
 
 	
 	
 
   	return (
 		<div className="App">
+
 			<img className="background" src={process.env.PUBLIC_URL + "assets/background.jpg"} alt="" />
+
 			<Stars />
+			{/* <StyledDiv className='styled' /> */}
 
-
-				{dimensions.width > 767 ?
-					<DesktopNav />
-					:
-					<MobileNav 
-					isOpen={isOpen}
-					setOpen={setOpen}
-					onToggle={onToggle}
-					handleOnClose={handleOnClose}
-					/>
-				}
-
-				<Routes>
-					<Route path="/" element={Home}  />
-				</Routes>
 			
-				<div className={`App__content show}`} >
-					{/* <Earth /> */}
-					{/* <Name/> */}
-					{/* <Alien/> */}
-					{/* <HiAlien/> */}
-					{/* <FlyingAlien /> */}
-				</div>
+				<Title className={`${showTitle ? "show" : "hide	"} ${dimensions.width < 768 ? "smallTitle" : "bigTitle"}`} />
+				
+				<div className={`App__content ${showContent ? "show" : "hide"}`} >
+					{dimensions.width > 767 ?
+						<DesktopNav />
+						:
+						<>
+							<MobileTitle/>
+							<MobileNav 
+							isOpen={isOpen}
+							setOpen={setOpen}
+							onToggle={onToggle}
+							handleOnClose={handleOnClose}
+							/>
+						</>
+					}
+
+					<Routes>
+						<Route path="/" element={<Home/>}  />
+						<Route path="/mywork" element={<MyWork/>}  />
+						<Route path="/cv" element={<CV/>}  />
+						<Route path="/about" element={<About/>}  />
+						<Route path="/contact" element={<Contact/>}  />
+					</Routes>
+				
+						{/* <Earth /> */}
+						{/* <Name/> */}
+						{/* <Alien/> */}
+						{/* <HiAlien/> */}
+						{/* <FlyingAlien /> */}
+					</div>
+				
+		
+			
+
+
 				
 			
 			

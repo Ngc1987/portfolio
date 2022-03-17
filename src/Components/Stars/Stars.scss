@@ -28,13 +28,13 @@
 	width: 0px;
 	background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #5f91ff, rgba(0, 0, 255, 0));
 	border-radius: 100%;
-	transform: translateX(50%) rotate(45deg);
+	transform: translateX(50%) rotate(40deg);
 	animation: shining 3000ms ease-in-out infinite 2000ms;
 	animation-delay: 5000ms;
 }
 
 .star::after {
-	transform: translateX(50%) rotate(135deg);
+	transform: translateX(50%) rotate(130deg);
 }
 
 .star:nth-child(1) {

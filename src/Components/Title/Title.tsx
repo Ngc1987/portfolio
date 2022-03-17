@@ -4,9 +4,10 @@ import { useEffect } from 'react';
 
 interface Props {
 	className: string;
+	size?: string;
 }
 
-const Title:React.FC<Props> = ({className}) => {
+const Title:React.FC<Props> = ({className, size}) => {
 
 
 	const revealRefs = useRef<SVGPathElement[]>([]);

@@ -1,0 +1,13 @@
+.home {
+	position: relative;
+	width: 100vw;
+	min-height: 100vh;
+
+	&__hiAlien {
+		position: absolute;
+		left: 0;
+		bottom: 20px;
+		width: 100px;
+		
+	}
+}

@@ -1,13 +1,17 @@
 import "./HiAlien.scss";
 import Eye from '../Eye/Eye';
 
-const HiAlien = () => {
+interface Props {
+	className?: string;
+}
+
+const HiAlien:React.FC<Props> = ({className}) => {
 
     return (
 
-		<div className="hiAlien">
+		<div className={`hiAlien ${className}`}>
 			<Eye className="hiAlien__eye" />
-			<img className="hiAlien__img" src={process.env.PUBLIC_URL + "assets/hiAlien.svg"} alt="petit extraterrestre vert qui fait salut" />
+			<img className="hiAlien__img" src={process.env.PUBLIC_URL + "assets/hiAlien.webp"} alt="petit extraterrestre vert qui fait salut" />
 		</div>
 		
     )

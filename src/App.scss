@@ -5,19 +5,21 @@
 }
 
 .App {
-	text-align: center;
+	// text-align: center;
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	// flex-wrap: wrap;
 	position: relative;
 	z-index: 50;
 	height: 100vh;
 	transition: all 1s ease;
 
 	&__content {
-		// z-index: -50;
-		// opacity: 0;
-		// transition: all 1s ease;
+		z-index: -50;
+		opacity: 0;
+		transition: all 1s ease;
 	}
 }
 
@@ -39,4 +41,9 @@
 .hide {
 	opacity: 0;
 	// z-index: -50;
+}
+
+.styled {
+	width: 500px;
+	height: 300px;
 }

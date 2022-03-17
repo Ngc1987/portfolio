@@ -1,24 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import "./Home.scss"
 import Title from '../../Components/Title/Title';
+import HiAlien from '../../Components/HiAlien/HiAlien';
 
-const Home:React.FC = () => {
+const Home:React.FC = (props) => {
 
-	// State to show or no the title
-	const [showTitle, setShowTitle] = useState<boolean>(true);
-	
-	// State to show or no the content
-	const [showContent, setShowContent] = useState<boolean>(false);
 
-	useEffect(() => {
-		setTimeout(() => {
-			setShowTitle(false);
-			setShowContent(true)
-		}, 7000)
-	})
 
 	return (
 		
-			<Title className={showTitle ? "show" : "hide"}  />
+		<div className="home" >
+			<div className="home__hiAlien">
+				<HiAlien />
+			</div>
+			
+		</div>
 	)
 }
 

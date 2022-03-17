@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 
-
 interface MousePosition {
 	x: number;
 	y: number;
 }
 
 // Listening the mouse positions on the screen (x and y)
-const useMousePosition = () => {
+const useMousePosition = ():MousePosition => {
 
 	const [position, setPosition] = useState<MousePosition>({ x: 0, y: 0 });
 

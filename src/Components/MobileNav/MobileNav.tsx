@@ -2,6 +2,7 @@ import React from 'react';
 import { slide as Menu } from 'react-burger-menu';
 import HamburgerButton from '../HamburgerButton/HamburgerButton';
 import "./MobileNav.scss"
+import { Link } from 'react-router-dom';
 
 export interface Props  {
 	isOpen: boolean;
@@ -30,46 +31,35 @@ const MobileNav:React.FC<Props> = ({isOpen, setOpen, onToggle, handleOnClose}) =
 
 				<h2>Navigate to</h2>
 
-				<div className="mobileNav__menu-link" 
-					// to="description" 
-					data-section="description" 
-					onClick={(e) => {
-						setOpen();
-					}}>
-					Home
-				</div>
-				<div className="mobileNav__menu-link" 
-					// to="pourqui" 
-					data-section="pourqui" 
-					onClick={(e) => {
-						setOpen();
-					}}>
-					Realisations
-				</div>
-				<div className="mobileNav__menu-link" 
-					// to="parcours" 
-					data-section="parcours" 
-					onClick={(e) => {
-						setOpen();
-					}}>
-					CV
-				</div>
-				<div className="mobileNav__menu-link" 
-					// to="gallerie" 
-					data-section="galerie" 
-					onClick={(e) => {
-						setOpen();
-					}}>
-					About
-				</div>
-				<div className="mobileNav__menu-link" 
-					// to="contact" 
-					data-section="contact" 
-					onClick={(e) => {
-						setOpen();
-					}}>
+				<Link className="mobileNav__menu-link" 
+					to="/" 
+					onClick={(e) => {setOpen();}}>
+						Home
+				</Link>
+
+				<Link className="mobileNav__menu-link" 
+					to="mywork" 
+					onClick={(e) => {setOpen();}}>
+						My work
+				</Link>
+
+				<Link className="mobileNav__menu-link" 
+					to="cv" 
+					onClick={(e) => {setOpen();}}>
+						CV
+				</Link>
+
+				<Link className="mobileNav__menu-link" 
+					to="about" 
+					onClick={(e) => {setOpen();}}>
+						About
+				</Link>
+
+				<Link className="mobileNav__menu-link" 
+					to="contact" 
+					onClick={(e) => {setOpen();}}>
 					Contact
-				</div>
+				</Link>
 			</Menu>
 		</>
 	)
