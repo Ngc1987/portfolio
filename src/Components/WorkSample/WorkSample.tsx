@@ -1,6 +1,9 @@
 import React from 'react';
 import "./WorkSample.scss";
 import StyledDiv from '../StyledDiv/StyledDiv';
+import { ImGithub } from 'react-icons/im';
+import { GiEarthAmerica } from 'react-icons/gi';
+
 
 interface Props {
 	title: string;
@@ -24,10 +27,12 @@ const WorkSample:React.FC<Props> = ({title, image, description, githubLink, live
 			</div>
 			<div className="workSample__links">
 				<div className="workSample__links-github">
-					<a href={githubLink}>Lien GitHub</a>
+					<ImGithub/>
+					<a href={githubLink}>GitHub repo</a>
 				</div>
 				<div className="workSample__links-liveDemo">
-					<a href={liveDemoLink}>Live Démo</a>
+					<GiEarthAmerica/>
+					<a href={liveDemoLink}>{liveDemoLink.includes("npmjs") ? "Npm repo" : "Live demo"}</a>
 				</div>
 			</div>
 		</article>

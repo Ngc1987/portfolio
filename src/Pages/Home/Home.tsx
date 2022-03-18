@@ -13,7 +13,7 @@ const Home:React.FC = (props) => {
 		
 		<section className="home" >
 
-			<div className="home__presentation">
+			<div className="home__description">
 				<p>Hi everyone, i'm <em>mwncbzudz</em> and i come from <em>TGSZIHFD</em></p>
 				<br />
 				<p>I'm a front-end developer, and open to work on Earth. Don't worry, my flying saucer doesn't work with Earth petrol, so it's not a problem for me to fly to your beautiful planet.</p>
