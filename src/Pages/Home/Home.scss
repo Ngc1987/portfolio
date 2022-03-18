@@ -1,7 +1,7 @@
 .home {
 	position: relative;
 	width: 100vw;
-	min-height: 100vh;
+	// min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -18,14 +18,106 @@
 			font-weight: bold;
 		}
 	}
-	
-	&__alien {
-		position: absolute;
-		right: 90%;
-		bottom: 20px;
-		width: 100px;
-		animation: flyingSaucer 8s infinite;
-		transform: rotate(-30deg);
+
+	&__anim {
+		position: relative;
+		height: 300px;
+		width: 100vw;
+		margin-top: 50px;
+		margin-bottom: 50px;
+
+		&-alien {
+			position: absolute;
+			right: 90%;
+			bottom: 20px;
+			width: 100px;
+			animation: flyingSaucer 8s infinite;
+			transform: rotate(-30deg) scale(0.3);
+		}
+
+		&-hello {
+			padding: 10px;
+			position: absolute;
+			right: 15%;
+			bottom: 240px;
+			width: 80px;
+			animation: helloWorld 8s ease infinite;
+			// box-shadow: 5px 5px 5px #fff;
+			filter: drop-shadow(0 0 5px #fff);
+
+			p {
+				color: #fff;
+				// filter: drop-shadow(0 0 5px #fff);
+			}
+		}
+	}
+}
+
+@media screen and(min-width: 500px) {
+	.home {
+
+		&__anim {
+
+			&-hello {
+				right: 40%;
+			}
+		}
+	}
+}
+@media screen and(min-width: 900px) {
+	.home {
+
+		&__anim {
+
+			&-hello {
+				right: 50%;
+			}
+		}
+	}
+}
+@media screen and(min-width: 1300px) {
+	.home {
+
+		&__anim {
+
+			&-hello {
+				right: 55%;
+			}
+		}
+	}
+}
+
+@keyframes helloWorld {
+	0% {
+		opacity: 0;
+		// bottom: 180px;
+	}
+	50% {
+		opacity: 0;
+		// bottom: 190px;
+	}
+	// 60% {
+	// 	opacity: 0;
+	// 	// bottom: 180px;
+	// }
+	52% {
+		opacity: 1;
+		// bottom: 200px;
+		transform: scale(1.1);
+	}
+	55% {
+		opacity: 1;
+		transform: scale(1.2);
+	}
+	60% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
 	}
 }
 
@@ -33,59 +125,113 @@
 	0% {
 		right: 110%;
 		bottom: 20px;
-		transform: rotate(-30deg) scale(1);
+		transform: rotate(-30deg) scale(0.4);
 	}
-	70% {
+	40% {
 		right: 70%;
-		bottom: 180px;
+		bottom: 150px;
 		filter: drop-shadow(0px 0px 20px #fff);
 		transform: rotate(-15deg) scale(0.9);
 	}
+	50% {
+		right: 70%;
+		bottom: 150px;
+		filter: drop-shadow(0px 0px 20px #fff);
+		transform: rotate(-15deg) scale(0.9);
+	}
+	51% {
+		right: 70%;
+		bottom: 160px;
+		filter: drop-shadow(0px 0px 20px #fff);
+		transform: rotate(-15deg) scale(0.9);
+	}
+	52% {
+		right: 70%;
+		bottom: 150px;
+		filter: drop-shadow(0px 0px 20px #fff);
+		transform: rotate(-15deg) scale(0.9);
+	}
+	53% {
+		right: 70%;
+		bottom: 160px;
+		filter: drop-shadow(0px 0px 20px #fff);
+		transform: rotate(-15deg) scale(0.9);
+	}
+	54% {
+		right: 70%;
+		bottom: 150px;
+		filter: drop-shadow(0px 0px 20px #fff);
+		transform: rotate(-15deg) scale(0.9);
+	}
+	// 60% {
+	// 	right: 70%;
+	// 	bottom: 150px;
+	// 	filter: drop-shadow(0px 0px 20px #fff);
+	// 	transform: rotate(-15deg) scale(0.9);
+	// }
+	// 61% {
+	// 	right: 70%;
+	// 	bottom: 160px;
+	// 	filter: drop-shadow(0px 0px 20px #fff);
+	// 	transform: rotate(-15deg) scale(0.9);
+	// }
+	// 62% {
+	// 	right: 70%;
+	// 	bottom: 150px;
+	// 	filter: drop-shadow(0px 0px 20px #fff);
+	// 	transform: rotate(-15deg) scale(0.9);
+	// }
+	// 63% {
+	// 	right: 70%;
+	// 	bottom: 160px;
+	// 	filter: drop-shadow(0px 0px 20px #fff);
+	// 	transform: rotate(-15deg) scale(0.9);
+	// }
+	// 64% {
+	// 	right: 70%;
+	// 	bottom: 150px;
+	// 	filter: drop-shadow(0px 0px 20px #fff);
+	// 	transform: rotate(-15deg) scale(0.9);
+	// }
 	71% {
 		transform: rotate(-13deg) scale(0.9);
 		right: 70%;
-		bottom: 180px;
+		bottom: 150px;
 		filter: drop-shadow(0px 0px 20px #fff);
 	}
 	72% {
 		transform: rotate(-17deg) scale(0.9);
 		right: 70%;
-		bottom: 180px;
+		bottom: 150px;
 		filter: drop-shadow(0px 0px 20px #fff);
 	}
 	73% {
 		transform: rotate(-13deg) scale(0.9);
 		right: 70%;
-		bottom: 180px;
+		bottom: 150px;
 		filter: drop-shadow(0px 0px 20px #fff);
 	}
 	74% {
 		transform: rotate(-17deg) scale(0.9);
 		right: 70%;
-		bottom: 180px;
+		bottom: 150px;
 		filter: drop-shadow(0px 0px 20px #fff);
 	}
 	75% {
 		transform: rotate(-13deg) scale(0.9);
 		right: 70%;
-		bottom: 180px;
+		bottom: 150px;
 		filter: drop-shadow(0px 0px 20px #fff);
 	}
 	76% {
 		transform: rotate(-17deg) scale(0.9);
 		right: 70%;
-		bottom: 180px;
+		bottom: 150px;
 		filter: drop-shadow(0px 0px 20px #fff);
 	}
-	// 77% {
-	// 	transform: rotate(0deg) scale(0.9);
-	// 	right: 70%;
-	// 	bottom: 180px;
-	// 	filter: drop-shadow(0px 0px 20px #fff);
-	// }
 	100% {
 		right: 50px;
-		bottom: 180px;
+		bottom: 5%;
 		transform: rotate(45deg) scale(0.1);
 		filter: drop-shadow(0px 0px 20px #fff);
 	}

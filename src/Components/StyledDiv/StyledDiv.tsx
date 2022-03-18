@@ -5,9 +5,9 @@ interface Props {
 	className: string;
 }
 
-const StyledDiv:React.FC<Props> = ({className}) => {
+const StyledDiv:React.FC<Props> = ({className, children}) => {
 	return (
-		<div className={`styledDiv ${className}`} >StyledDiv</div>
+		<div className={`styledDiv ${className}`} >{children}</div>
 	)
 }
 

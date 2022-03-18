@@ -4,17 +4,14 @@ import Title from '../../Components/Title/Title';
 import Earth from '../../Components/Earth/Earth';
 import HiAlien from '../../Components/HiAlien/HiAlien';
 import FlyingAlien from '../../Components/FlyingAlien/FlyingAlien';
+import StyledDiv from '../../Components/StyledDiv/StyledDiv';
 
 
 const Home:React.FC = (props) => {
 
-	
-
-
-
 	return (
 		
-		<div className="home" >
+		<section className="home" >
 
 			<div className="home__presentation">
 				<p>Hi everyone, i'm <em>mwncbzudz</em> and i come from <em>TGSZIHFD</em></p>
@@ -26,14 +23,18 @@ const Home:React.FC = (props) => {
 				<p>Visit the other pages of my portfolio to see some work of me, to know me a little more, to check my experience or to contact me.</p>
 			</div>
 
-			<div className="home__alien">
-				<FlyingAlien />
-			</div>
-			<div className="home__earth">
-				<Earth />
+			<div className="home__anim">
+				<div className="home__anim-alien">
+					<FlyingAlien />
+				</div>
+				<StyledDiv className="home__anim-hello"><p>Hello World !</p></StyledDiv>
+				<div className="home__anim-earth">
+					<Earth />
+				</div>
+
 			</div>
 			
-		</div>
+		</section>
 	)
 }
 

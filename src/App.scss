@@ -13,8 +13,9 @@
 	// flex-wrap: wrap;
 	position: relative;
 	z-index: 50;
-	height: 100vh;
+	// height: 100vh;
 	transition: all 1s ease;
+	width: 100vw;
 
 	&__content {
 		z-index: -50;
