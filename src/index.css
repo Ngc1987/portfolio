@@ -15,6 +15,17 @@
     src: url("./Fonts/space\ age.ttf");
 }
 
+@font-face {
+    font-family: "klingon";
+    src: url("./Fonts/klingon.ttf");
+}
+
+.alienFont {
+	font-family: klingon;
+}
+.humanFont {
+	font-family: nasa;
+}
 
 body {
   margin: 0;

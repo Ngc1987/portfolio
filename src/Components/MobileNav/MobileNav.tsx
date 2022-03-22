@@ -56,7 +56,7 @@ const MobileNav:React.FC<Props> = ({isOpen, setOpen, onToggle, handleOnClose}) =
 				<Link className="mobileNav__menu-link" 
 					to="about" 
 					onClick={(e) => {setOpen();}}>
-						About
+						About me
 				</Link>
 
 				<Link className="mobileNav__menu-link" 

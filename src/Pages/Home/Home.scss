@@ -72,7 +72,10 @@
 		&__anim {
 
 			&-hello {
-				right: 50%;
+				right: 40%;
+				bottom: 180px;
+				font-size: 2.1rem;
+				min-width: 110px;
 			}
 		}
 	}
@@ -83,7 +86,7 @@
 		&__anim {
 
 			&-hello {
-				right: 55%;
+				// right: 55%;
 			}
 		}
 	}

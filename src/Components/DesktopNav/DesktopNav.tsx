@@ -56,7 +56,7 @@ const DesktopNav:React.FC = () => {
 			<Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/" >Home</Link> 
 			<Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/mywork" >My work</Link>
 			<Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/cv" >CV</Link>
-			<Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/about" >About</Link>
+			<Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/about" >About me</Link>
 			<Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/contact" >Contact</Link>
 		
 			<div id="marker" ref={marker}>

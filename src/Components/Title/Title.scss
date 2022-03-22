@@ -1,7 +1,7 @@
 .title {
 	position: absolute;
 	left: 50%;
-	top: 50%;
+	top: 40%;
 	transform: translate(-50%, -50%);
 	z-index: 5000;
 	transition: all 1s ease;
@@ -19,6 +19,7 @@
 		opacity: 0;
 		animation: subtitle 1.5s ease-in-out 3500ms forwards;
 		text-align: center;
+		font-size: 2rem;
 	}
 	
 	// path:nth-child(1) {
@@ -187,4 +188,10 @@
 .hide {
 	opacity: 0;
 	z-index: -50;
+}
+
+@media screen and (min-width: 768px) {
+	.title {
+		top: 50%;
+	}
 }

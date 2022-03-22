@@ -49,7 +49,7 @@ function App() {
 		setTimeout(() => {
 			setShowTitle(false);
 			setShowContent(true)
-		}, 500)
+		}, 700)
 	})
 
 	
@@ -64,7 +64,7 @@ function App() {
 			{/* <StyledDiv className='styled' /> */}
 
 			
-				<Title className={`${showTitle ? "hide" : "hide	"} ${dimensions.width < 768 ? "smallTitle" : "bigTitle"}`} />
+				<Title className={`${showTitle ? "show" : "hide	"} ${dimensions.width < 768 ? "smallTitle" : "bigTitle"}`} />
 				
 				<div className={`App__content ${showContent ? "show" : "hide"}`} >
 					{dimensions.width > 767 ?

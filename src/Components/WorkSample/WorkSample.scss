@@ -1,5 +1,5 @@
 .workSample {
-	width: 80%;
+	width: 70%;
 	// height: 400px;
 	background: rgba(255, 255, 255, 0.2);
 	backdrop-filter: blur(3px);
@@ -8,7 +8,7 @@
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	filter: drop-shadow(0px 0px 15px #b65dff);
+	// filter: drop-shadow(0px 0px 15px #b65dff);
 	box-shadow: 
 				0 0 5px #b65dff,
 				0 0 15px #b65dff,
@@ -19,7 +19,7 @@
 				// inset 0 0 25px #b65dff,
 				// inset 0 0 35px #b65dff,
 	;
-
+	
 	&__title {
 		width: 100%;
 		padding: 10px 0;
@@ -44,6 +44,16 @@
 		
 		img {
 			border-radius: 10px;
+			box-shadow: 
+						0 0 5px #b65dff,
+						0 0 15px #b65dff,
+						// 0 0 25px #b65dff,
+						// 0 0 35px #b65dff,
+						inset 0 0 5px #b65dff,
+						inset 0 0 15px #b65dff,
+						// inset 0 0 25px #b65dff,
+						// inset 0 0 35px #b65dff,
+			;
 			// min-height: 100%;
 			max-height: 100%;
 			width: 100%;
@@ -88,7 +98,7 @@
 	}
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
 	.workSample {
 		width: 45%;
 	}

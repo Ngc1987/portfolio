@@ -8,7 +8,7 @@ export const WorkSampleDatas:WorkSample[] = [
 	},
 	{
 		"title": "Portfolio",
-		"image": "https://i.imgur.com/7OStcHE.png",
+		"image": "https://i.imgur.com/PJsoJhx.png",
 		"description": "This is my portfolio. You are already on this, but if you like infinite loops like a bugged code, click on it !",
 		"githubLink": "https://github.com/Ngc1987/portfolio",
 		"liveDemoLink": "https://thomasemeriaportfolio.netlify.app/",
@@ -22,7 +22,7 @@ export const WorkSampleDatas:WorkSample[] = [
 	},
 	{
 		"title": "ToDo application",
-		"image": "https://i.imgur.com/Pg6OXMu.png",
+		"image": "https://i.imgur.com/XyPc33L.png",
 		"description": "This is a beautiful ToDo application, with a drag and drop function to manage your todos.",
 		"githubLink": "https://github.com/Ngc1987/Todo-React-TypeScript-App",
 		"liveDemoLink": "https://taskedapp.netlify.app/",

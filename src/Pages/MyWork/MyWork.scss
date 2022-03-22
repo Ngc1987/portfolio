@@ -25,8 +25,12 @@
 	}
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
 	.mywork {
+
+		&__description {
+			width: 70%;
+		}
 		
 		&__samples {
 			flex-direction: row;
@@ -34,6 +38,14 @@
 			justify-content: space-between;
 			align-items: flex-start;
 			width: 80%;
+		}
+	}
+}
+@media screen and (min-width: 1000px) {
+	.mywork {
+		
+		&__samples {
+			max-width: 60%;
 		}
 	}
 }
