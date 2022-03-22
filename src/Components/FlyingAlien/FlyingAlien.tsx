@@ -1,7 +1,7 @@
 import "./FlyingAlien.scss";
 import Eye from '../Eye/Eye';
 
-const FlyingAlien = () => {
+const FlyingAlien:React.FC = () => {
 
     return (
 

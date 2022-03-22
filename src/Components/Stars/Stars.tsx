@@ -1,7 +1,7 @@
 import React from 'react';
-import "./Stars.scss"
+import "./Stars.scss";
 
-const Stars = () => {
+const Stars:React.FC = () => {
 	return (
 		<div className="stars" >
 			<div className="star"></div>
@@ -15,4 +15,4 @@ const Stars = () => {
 	)
 }
 
-export default Stars
+export default Stars;

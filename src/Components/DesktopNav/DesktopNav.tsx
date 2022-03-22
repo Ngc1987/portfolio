@@ -1,25 +1,28 @@
 import React, { useEffect, useRef } from 'react';
 import "./DesktopNav.scss";
-import {Link, useParams} from "react-router-dom";
 import usePathname from '../../Hooks/usePathname';
+import {Link} from "react-router-dom";
 
 
 const DesktopNav:React.FC = () => {
 	
 
-	// Select the lightning element
+	// Select the ball div element
 	const marker = useRef() as React.MutableRefObject<HTMLDivElement>;
+	
+	// Select the ball element
 	const ball = useRef() as React.MutableRefObject<HTMLDivElement>;
 	// Taking the path name of the current page
 	const pathName = usePathname();
 
-	
+	// Making the marker move when the menu is on hover	
 	function customizeMarker(e: any) {
 		marker.current.style.left = e.target.offsetLeft + "px";
 		marker.current.style.width = e.target.clientWidth + "px";
 
 	}
 
+	// Setting the color of the ball according to the url path
 	function keepMarkerColor(elem: any) {
 		switch(pathName) {
 			case "/" :
@@ -44,25 +47,23 @@ const DesktopNav:React.FC = () => {
 				break;
 		}
 	}
-
 	useEffect(() => {
 		keepMarkerColor(ball.current)
 	})
 
 	
 	return (
+
 		<nav className="desktopNav" >
-			
-			<Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/" >Home</Link> 
-			<Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/mywork" >My work</Link>
-			<Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/cv" >CV</Link>
-			<Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/about" >About me</Link>
-			<Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/contact" >Contact</Link>
+			<Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/">Home</Link> 
+			<Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/mywork">My work</Link>
+			<Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/cv">CV</Link>
+			<Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/about">About me</Link>
+			<Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/contact">Contact</Link>
 		
 			<div id="marker" ref={marker}>
 				<div className="ball" ref={ball}></div>
 			</div>
-			
 		</nav>
 	)
 }

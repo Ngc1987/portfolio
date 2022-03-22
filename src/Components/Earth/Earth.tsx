@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Earth.scss"
 
-const Earth = () => {
+const Earth:React.FC = () => {
 	return (
 		<img id="earth" src={process.env.PUBLIC_URL + "assets/earth2.png"} alt="" />
 	)

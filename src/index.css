@@ -20,12 +20,12 @@
     src: url("./Fonts/klingon.ttf");
 }
 
-.alienFont {
-	font-family: klingon;
+*, ::before, ::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
-.humanFont {
-	font-family: nasa;
-}
+
 
 body {
   margin: 0;
@@ -43,4 +43,12 @@ code {
 
 :root {
 	font-size: 10px;
+}
+
+
+.alienFont {
+	font-family: klingon;
+}
+.humanFont {
+	font-family: nasa;
 }

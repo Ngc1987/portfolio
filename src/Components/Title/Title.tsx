@@ -9,34 +9,30 @@ interface Props {
 
 const Title:React.FC<Props> = ({className, size}) => {
 
-
+	// Making a refs array
 	const revealRefs = useRef<SVGPathElement[]>([]);
     revealRefs.current = [];
  
+	// Adding each ref on the refs array
     const pathRef = (el: SVGPathElement):void => {
         if (el && !revealRefs.current.includes(el)) {
             revealRefs.current.push(el);
         }
-
-		// if(el instanceof SVGPathElement) {
-		// 	const line = el.getTotalLength();
-		// 	console.log(`L'élément ${el} est long de ${line}`)
-		// }
     };
 
+	// Fetch the path length for each ref to set the good parameters on the css
 	useEffect(() => {
 		// console.log(revealRefs);
 		revealRefs.current.forEach((el) => {
 			if(el instanceof SVGPathElement) {
 				const line = el.getTotalLength();
-				// console.log(`L'élément ${el} est long de ${line}`)
-				// console.log(el.getTotalLength())
 			}
 		})
 		
 	})
 	
 	return (
+		
 		<div className={`title ${className}`} >
 			<svg className="title__svg" width="444" height="192" viewBox="0 0 444 192" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<mask id="path-1-inside-1_2_5" fill="white">
@@ -95,7 +91,6 @@ const Title:React.FC<Props> = ({className, size}) => {
 				<p className="title__sign-name" >Thomas Semeria</p>
 			</div>
 		</div>
-
 
   	)
 }

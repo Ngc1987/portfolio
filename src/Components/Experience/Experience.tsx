@@ -4,7 +4,6 @@ import { FaCar } from 'react-icons/fa';
 import { SiMcdonalds } from 'react-icons/si';
 import { GiChimney } from 'react-icons/gi';
 import { FaLaptopCode } from 'react-icons/fa';
-import {ExperienceProps} from "../../Datas/CvExperiencesDatas"
 
 interface Props {
 	employer: string
@@ -23,7 +22,7 @@ const Experience:React.FC<Props> = ({employer, job, dates}) => {
 						employer === "Myself" ? <FaLaptopCode/> :
 						employer === "OpenClassRooms" ? <FaLaptopCode/> :
 						employer === "McDonald's" ? <SiMcdonalds/> :
-						<GiChimney/>
+													<GiChimney/>
 					}
 				</div>
 				<div className="experience__header-employer">{employer}</div>

@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from 'react';
+import React from 'react';
 import "./CheckBox.scss";
 
 interface Props {
@@ -8,8 +8,8 @@ interface Props {
 
 const CheckBox:React.FC<Props> = ({inAlien, changeTextLanguage}) => {
 
-	console.log(inAlien)
 	return (
+		
 		<label className="checkbox" htmlFor="checkbox">
 			<input id="checkbox" 
 					type="checkbox" 

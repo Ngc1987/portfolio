@@ -8,12 +8,10 @@ interface Props {
 const HiAlien:React.FC<Props> = ({className}) => {
 
     return (
-
 		<div className={`hiAlien ${className}`}>
 			<Eye className="hiAlien__eye" />
 			<img className="hiAlien__img" src={process.env.PUBLIC_URL + "assets/hiAlien.webp"} alt="petit extraterrestre vert qui fait salut" />
 		</div>
-		
     )
 }
 

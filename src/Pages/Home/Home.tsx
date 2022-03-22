@@ -1,20 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import "./Home.scss"
-import Title from '../../Components/Title/Title';
 import Earth from '../../Components/Earth/Earth';
-import HiAlien from '../../Components/HiAlien/HiAlien';
 import FlyingAlien from '../../Components/FlyingAlien/FlyingAlien';
 import StyledDiv from '../../Components/StyledDiv/StyledDiv';
 
 
-const Home:React.FC = (props) => {
+const Home:React.FC = () => {
 
 	return (
 		
 		<section className="home" >
 
 			<div className="home__description">
-				<p>Hi everyone, i'm <em>mwncbzudz</em> and i come from <em>TGSZIHFD</em></p>
+				<h2>Hi everyone, i'm 
+					<em className="alienFont" >mwncbzudz grge </em>
+					<span></span> and i come from 
+					<em className="alienFont" >sfdhbjbty</em>
+				</h2>
+				<br />
+				<p>In your planet, you can call me Thomas Semeria.</p>
 				<br />
 				<p>I'm a front-end developer, and open to work on Earth. Don't worry, my flying saucer doesn't work with Earth petrol, so it's not a problem for me to fly to your beautiful planet.</p>
 				<br />
@@ -27,7 +31,9 @@ const Home:React.FC = (props) => {
 				<div className="home__anim-alien">
 					<FlyingAlien />
 				</div>
-				<StyledDiv className="home__anim-hello"><p>Hello World !</p></StyledDiv>
+				<StyledDiv className="home__anim-hello">
+					<p>Hello World !</p>
+				</StyledDiv>
 				<div className="home__anim-earth">
 					<Earth />
 				</div>
@@ -38,4 +44,4 @@ const Home:React.FC = (props) => {
 	)
 }
 
-export default Home
+export default Home;

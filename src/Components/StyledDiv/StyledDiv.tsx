@@ -11,4 +11,4 @@ const StyledDiv:React.FC<Props> = ({className, children}) => {
 	)
 }
 
-export default StyledDiv
+export default StyledDiv;

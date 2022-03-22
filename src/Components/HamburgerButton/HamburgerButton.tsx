@@ -1,5 +1,5 @@
-import { Sling as Hamburger }  from "hamburger-react";
 import React from "react";
+import { Sling as Hamburger }  from "hamburger-react";
 
 interface Props  {
 	toggled: boolean;
@@ -9,9 +9,9 @@ interface Props  {
 
 const HamburgerButton:React.FC<Props> = ({toggled, toggle, onToggle}) => {
 
+	// Checking the browser to set different color in mozilla
 	const navigateur = navigator.userAgent;
-
-	console.log(navigateur)
+	// console.log(navigateur)
 
 	return (
 
@@ -22,8 +22,8 @@ const HamburgerButton:React.FC<Props> = ({toggled, toggle, onToggle}) => {
 				size={36} 
 				duration={1} 
 				color={!navigateur.includes("Chrome") ?  "#5da6ff" :  "white"}
-				label="Show menu"/>
-
+				label="Show menu"
+				/>
 	)
 }
 

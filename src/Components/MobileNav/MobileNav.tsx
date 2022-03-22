@@ -1,7 +1,7 @@
 import React from 'react';
-import { slide as Menu } from 'react-burger-menu';
+import "./MobileNav.scss";
 import HamburgerButton from '../HamburgerButton/HamburgerButton';
-import "./MobileNav.scss"
+import { slide as Menu } from 'react-burger-menu';
 import { Link } from 'react-router-dom';
 
 export interface Props  {
@@ -13,11 +13,10 @@ export interface Props  {
 
 const MobileNav:React.FC<Props> = ({isOpen, setOpen, onToggle, handleOnClose}) => {
 
+	// Checking the browser to set a different background color to the mobile menu (because the backdrop-filter property doesn't work on mozilla)
 	const navigateur = navigator.userAgent;
+	// console.log(navigateur)
 
-	console.log(navigateur)
-
-	
 	return (
 		<>
 			<div className="mobileNav__button">
@@ -69,4 +68,4 @@ const MobileNav:React.FC<Props> = ({isOpen, setOpen, onToggle, handleOnClose}) =
 	)
 }
 
-export default MobileNav
+export default MobileNav;

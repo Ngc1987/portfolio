@@ -7,7 +7,6 @@
 	transition: all 1s ease;
 
 	&__svg {
-		
 		animation: fill 1.7s ease forwards 2.3s;
 		filter: drop-shadow(0px 0px 20px white);
 	}
@@ -22,11 +21,6 @@
 		font-size: 2rem;
 	}
 	
-	// path:nth-child(1) {
-	// 	stroke-dasharray: 10394px;
-	// 	stroke-dashoffset: 10394px;
-	// 	animation: titleAnim 2s ease forwards;
-	// }
 	path:nth-child(2) {
 		stroke-dasharray: 199px;
 		stroke-dashoffset: 199px;
@@ -147,7 +141,6 @@
 		stroke-dashoffset: 382px;
 		animation: titleAnim 2s ease forwards 2.4s;
 	}
-
 }
 
 .smallTitle {

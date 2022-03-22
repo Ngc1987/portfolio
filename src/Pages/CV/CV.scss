@@ -1,7 +1,6 @@
 .cv {
 	position: relative;
 	width: 100vw;
-	// min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -14,10 +13,6 @@
 		color: #ec9ca4;
 		filter: drop-shadow(0px 0px 10px #ff5d6d);
 		font-size: 1.8rem;
-
-		h2 {
-			font-size: 2rem;
-		}
 	}
 
 	&__content {
@@ -66,12 +61,8 @@
 			box-shadow: 
 				0 0 5px #fff,
 				0 0 15px #fa7d89,
-				// 0 0 25px #fa7d89,
-				// 0 0 35px #fa7d89,
 				inset 0 0 5px #fff,
 				inset 0 0 15px #fa7d89,
-				// inset 0 0 25px #fa7d89,
-				// inset 0 0 35px #fa7d89,
 			;
 
 			&-header{
@@ -89,17 +80,12 @@
 				margin-top: 20px;
 				margin-left: 20px;
 				border-radius: 15px;
-				// background: chartreuse;
 				overflow: hidden;
 				box-shadow: 
 				0 0 5px #fff,
 				0 0 15px #fa7d89,
-				// 0 0 25px #fa7d89,
-				// 0 0 35px #fa7d89,
 				inset 0 0 5px #fff,
 				inset 0 0 15px #fa7d89,
-				// inset 0 0 25px #fa7d89,
-				// inset 0 0 35px #fa7d89,
 			;
 			}
 
@@ -114,7 +100,6 @@
 
 			&-skills {
 				margin-top: 20px;
-				// padding: 25px;
 				width: 100%;
 				color: #fff;
 				display: flex;
@@ -139,19 +124,14 @@
 			box-shadow: 
 				0 0 5px #fff,
 				0 0 15px #fa7d89,
-				// 0 0 25px #fa7d89,
-				// 0 0 35px #fa7d89,
 				inset 0 0 5px #fff,
 				inset 0 0 15px #fa7d89,
-				// inset 0 0 25px #fa7d89,
-				// inset 0 0 35px #fa7d89,
 			;
 
 			h2 {
 				font-size: 2rem;
 				color: #ec9ca4;
 				filter: drop-shadow(0px 0px 10px #ff5d6d);
-				// margin-top: 25px;
 			}
 
 			p {
@@ -188,19 +168,14 @@
 				box-shadow: 
 				0 0 5px #fff,
 				0 0 15px #fa7d89,
-				// 0 0 25px #fa7d89,
-				// 0 0 35px #fa7d89,
 				inset 0 0 5px #fff,
 				inset 0 0 15px #fa7d89,
-				// inset 0 0 25px #fa7d89,
-				// inset 0 0 35px #fa7d89,
 			}
 			
 			&-language {
 				display: flex;
 				flex-direction: column;
 				border-radius: 10px;
-				// margin-top: -100px;
 				overflow: hidden;
 				background: rgba(255, 255, 255, 0.2);
 				backdrop-filter: blur(3px);
@@ -208,12 +183,8 @@
 				box-shadow: 
 				0 0 5px #fff,
 				0 0 15px #ff5d6d,
-				// 0 0 25px #ff5d6d,
-				// 0 0 35px #ff5d6d,
 				inset 0 0 5px #fff,
 				inset 0 0 15px #ff5d6d,
-				// inset 0 0 25px #ff5d6d,
-				// inset 0 0 35px #ff5d6d,
 				;
 				transition: all 0.5s ease;
 
@@ -229,9 +200,7 @@
 			}
 		}
 	}
-
 }
-
 
 .hideLanguage {
 	height: 0px;
@@ -239,7 +208,6 @@
 .showLanguage {
 	height: 60px;
 }
-
 
 @media screen and(min-width: 768px) {
 	.cv {
@@ -278,7 +246,6 @@
 			&__cv {
 
 				&-intro {
-					// font-size: 1.3rem;
 					margin-left: 30px;
 					margin-right: 30px;
 				}

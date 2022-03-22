@@ -38,7 +38,6 @@
 		display: inline-block;
 		padding: 10px 20px;
 		background: rgba(255, 255, 255, 0.05);
-		// box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 		border-top: 1px solid rgba(255, 255, 255, 0.1);
 		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 		z-index: 100;
@@ -92,55 +91,44 @@
 					0 0 60px #5da6ff,
 	}
 
-	#marker::before {
-		// content: "";
-		// position: absolute;
-		// top: 50%;
-		// left: 50%;
-		// transform: translate(-50%, -50%);
-		// width: 40px;
-		// height: 40px;
-		// ;
-	}
-	
-	& a:nth-child(1):hover ~ #marker:first-child(1) {
-		background: #5da6ff;
-		box-shadow: 0 0 15px #5da6ff,
-					0 0 30px #5da6ff,
-					0 0 45px #5da6ff,
-					0 0 60px #5da6ff
-		;
-	}
-	& a:nth-child(2):hover ~ #marker:first-child(1) {
-		background: #b65dff;
-		box-shadow: 0 0 15px #b65dff,
-					0 0 30px #b65dff,
-					0 0 45px #b65dff,
-					0 0 60px #b65dff
-		;
-	}
-	& a:nth-child(3):hover ~ #marker:first-child(1) {
-		background: #ff5d6d;
-		box-shadow: 0 0 15px #ff5d6d,
-					0 0 30px #ff5d6d,
-					0 0 45px #ff5d6d,
-					0 0 60px #ff5d6d
-		;
-	}
-	& a:nth-child(4):hover ~ #marker:first-child(1) {
-		background: #ffa35d;
-		box-shadow: 0 0 15px #ffa35d,
-					0 0 30px #ffa35d,
-					0 0 45px #ffa35d,
-					0 0 60px #ffa35d
-		;
-	}
-	& a:nth-child(5):hover ~ #marker:first-child(1) {
-		background: #6ec444;
-		box-shadow: 0 0 15px #6ec444,
-					0 0 30px #6ec444,
-					0 0 45px #6ec444,
-					0 0 60px #6ec444
-		;
-	}
+	// & a:nth-child(1):hover ~ #marker:first-child(1) {
+	// 	background: #5da6ff;
+	// 	box-shadow: 0 0 15px #5da6ff,
+	// 				0 0 30px #5da6ff,
+	// 				0 0 45px #5da6ff,
+	// 				0 0 60px #5da6ff
+	// 	;
+	// }
+	// & a:nth-child(2):hover ~ #marker:first-child(1) {
+	// 	background: #b65dff;
+	// 	box-shadow: 0 0 15px #b65dff,
+	// 				0 0 30px #b65dff,
+	// 				0 0 45px #b65dff,
+	// 				0 0 60px #b65dff
+	// 	;
+	// }
+	// & a:nth-child(3):hover ~ #marker:first-child(1) {
+	// 	background: #ff5d6d;
+	// 	box-shadow: 0 0 15px #ff5d6d,
+	// 				0 0 30px #ff5d6d,
+	// 				0 0 45px #ff5d6d,
+	// 				0 0 60px #ff5d6d
+	// 	;
+	// }
+	// & a:nth-child(4):hover ~ #marker:first-child(1) {
+	// 	background: #ffa35d;
+	// 	box-shadow: 0 0 15px #ffa35d,
+	// 				0 0 30px #ffa35d,
+	// 				0 0 45px #ffa35d,
+	// 				0 0 60px #ffa35d
+	// 	;
+	// }
+	// & a:nth-child(5):hover ~ #marker:first-child(1) {
+	// 	background: #6ec444;
+	// 	box-shadow: 0 0 15px #6ec444,
+	// 				0 0 30px #6ec444,
+	// 				0 0 45px #6ec444,
+	// 				0 0 60px #6ec444
+	// 	;
+	// }
 }

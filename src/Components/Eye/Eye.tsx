@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import useMousePosition from '../../Hooks/useMousePosition';
 import "./Eye.scss";
+import useMousePosition from '../../Hooks/useMousePosition';
 
 interface Props {
 	className: string;
@@ -29,17 +29,13 @@ const Eye: React.FC<Props> = ({className, size, color}) => {
 		if(eyePos) {
 			if(mousePosition.x  < eyePos.left) {
 				setTransformX(((mousePosition.x  * 100) / (window.innerWidth - (window.innerWidth - eyePos.left)) / 2 ))
-				// console.log( "MouseX < eyePos.left " + mouseX, mousePosition.x, eyePos.left)
 			} else {
 				setTransformX( 50 + ((((mousePosition.x - eyePos.left) * 100)) / (window.innerWidth - eyePos.left)) / 2 )
-				// console.log( "MouseX > eyePos.left " + mouseX, mousePosition.x, eyePos.left)
 			}
 			if(mousePosition.y < eyePos.top) {
 				setTransformY(((mousePosition.y * 100) / (window.innerHeight - (window.innerHeight - eyePos.top)) / 2 ))
-				// console.log( "MouseY < eyePos.top " + mouseX, mousePosition.x, eyePos.left)
 			} else {
 				setTransformY( 50 + (((mousePosition.y - eyePos.top) * 100) / (window.innerHeight - eyePos.top)) / 2 )
-				// console.log( "MouseY > eyePos.top " + mouseX, mousePosition.x, eyePos.left)
 			}
 		}
 
@@ -56,12 +52,7 @@ const Eye: React.FC<Props> = ({className, size, color}) => {
 	return (
 		<div className={`${className} eye ${size && size} ${color && color}`}>
 			<div ref={pupille}  className="pupilleDiv">
-				<div className="pupille"
-					
-					style={eyeStyle}
-					>
-					{/* <img src={process.env.PUBLIC_URL + "assets/greeneye.svg"} alt="" /> */}
-				</div>
+				<div className="pupille" style={eyeStyle}></div>
 			</div>
 		</div>
 	)

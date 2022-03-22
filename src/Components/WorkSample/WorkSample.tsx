@@ -1,9 +1,7 @@
 import React from 'react';
 import "./WorkSample.scss";
-import StyledDiv from '../StyledDiv/StyledDiv';
 import { ImGithub } from 'react-icons/im';
 import { GiEarthAmerica } from 'react-icons/gi';
-
 
 interface Props {
 	title: string;
@@ -14,6 +12,7 @@ interface Props {
 }
 
 const WorkSample:React.FC<Props> = ({title, image, description, githubLink, liveDemoLink}) => {
+	
 	return (
 		<article className="workSample">
 			<div className="workSample__title">

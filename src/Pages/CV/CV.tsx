@@ -5,14 +5,18 @@ import Skill from "../../Components/Skill/Skill";
 import Experience from "../../Components/Experience/Experience";
 import {ExperiencesDatas} from "../../Datas/CvExperiencesDatas"
 
-const CV = () => {
+const CV:React.FC = () => {
 
+	// State for the download menu
 	const [isOpen, setIsOpen] = useState<boolean>(false);
+	// State for the selected language
 	const [inAlien, setInAlien] = useState<boolean>(false);
 
+	// Change the state for the download menu, who show the two different languages to download the cv
 	const showLanguages = () => {
 		setIsOpen(!isOpen)
 	}
+	// Change the state to show the content in earth or klingon language
 	const changeTextLanguage = () => {
 		setInAlien(!inAlien)
 	}
@@ -30,8 +34,13 @@ const CV = () => {
 			<div className="cv__content">
 				<div className="cv__content__language">
 					<p className="humanFont" >Earth language</p>
-					<CheckBox inAlien={inAlien} changeTextLanguage={changeTextLanguage} />
-					<p className="humanFont"><span style={{fontSize: "1.3rem"}} className="alienFont">ZXOOKG  </span> language</p>
+					<CheckBox inAlien={inAlien} 
+								changeTextLanguage={changeTextLanguage} />
+					<p className="humanFont">
+						<span style={{fontSize: "1.3rem"}} 
+							  className="alienFont">ZXOOKG  
+						</span>language
+					</p>
 				</div>
 
 				<div className="cv__content__cv">
@@ -65,7 +74,6 @@ const CV = () => {
 					<h2>Experiences</h2>
 					<p>Download the CV by pressing the button located below this section to see the job descriptions and more details on it.</p>
 					<div className="cv__content__experiences-articles">
-
 						{
 							ExperiencesDatas.map((obj, index) => {
 								return (
@@ -76,21 +84,19 @@ const CV = () => {
 								)
 							})
 						}
-						{/* <Experience/>
-						<Experience/>
-						<Experience/> */}
 					</div>
 				</div>
 
 
 				<div className={`cv__content__download ${inAlien ? "alienFont" : "humanFont"}`}>
-					<div className="cv__content__download-button" onClick={showLanguages} >Download CV</div>
+					<div className="cv__content__download-button" 
+						 onClick={showLanguages} >Download CV
+					</div>
 					
 					<div className={`cv__content__download-language ${isOpen ? "showLanguage" : "hideLanguage"}`}>
 						<div onClick={showLanguages} >In english</div>
 						<div onClick={showLanguages} >In french</div>
 					</div>
-					
 				</div>
 			</div>
 		</section>

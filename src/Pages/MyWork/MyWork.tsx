@@ -3,13 +3,12 @@ import "./MyWork.scss";
 import { WorkSampleDatas } from '../../Datas/WorkSampleDatas';
 import WorkSample from "../../Components/WorkSample/WorkSample";
 
-const MyWork = () => {
+const MyWork:React.FC = () => {
 
-	console.log(WorkSampleDatas)
 	return (
 		<section className="mywork" >
 			<div className="mywork__description">
-				<p>Here is some of my work.</p>
+				<h2>Here is some of my work.</h2>
 				<br />
 				<p>Click on "Live demo" to visit the website, or click on the GitHub logo to see my repo on GitHub.</p>
 				<br />
