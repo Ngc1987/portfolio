@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./CV.scss";
+
 import CheckBox from "../../Components/CheckBox/CheckBox";
 import Skill from "../../Components/Skill/Skill";
 import Experience from "../../Components/Experience/Experience";
+
 import {ExperiencesDatas} from "../../Datas/CvExperiencesDatas"
 
 const CV:React.FC = () => {
@@ -37,7 +39,7 @@ const CV:React.FC = () => {
 					<CheckBox inAlien={inAlien} 
 								changeTextLanguage={changeTextLanguage} />
 					<p className="humanFont">
-						<span style={{fontSize: "1.3rem"}} 
+						<span style={{fontSize: "1.1rem", marginRight: "5px"}} 
 							  className="alienFont">ZXOOKG  
 						</span>language
 					</p>
@@ -72,7 +74,9 @@ const CV:React.FC = () => {
 
 				<div className="cv__content__experiences">
 					<h2>Experiences</h2>
-					<p>Download the CV by pressing the button located below this section to see the job descriptions and more details on it.</p>
+					<p>You can download the CV by pressing the button located below this section to see the job descriptions and more details on it.</p>
+					<br />
+					<p>You also can see my human face on this.</p>
 					<div className="cv__content__experiences-articles">
 						{
 							ExperiencesDatas.map((obj, index) => {
@@ -80,6 +84,7 @@ const CV:React.FC = () => {
 									<Experience employer={obj.employer}
 												job={obj.job}
 												dates={obj.dates}
+												key={200 + index}
 									 />
 								)
 							})

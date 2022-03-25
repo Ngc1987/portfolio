@@ -20,7 +20,7 @@ const Experience:React.FC<Props> = ({employer, job, dates}) => {
 					{
 						employer === "Feu Vert" ? <FaCar/> :
 						employer === "Myself" ? <FaLaptopCode/> :
-						employer === "OpenClassRooms" ? <FaLaptopCode/> :
+						employer === "Open Class Rooms" ? <FaLaptopCode/> :
 						employer === "McDonald's" ? <SiMcdonalds/> :
 													<GiChimney/>
 					}

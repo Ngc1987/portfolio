@@ -1,5 +1,6 @@
 import React from 'react';
-import "./Home.scss"
+import "./Home.scss";
+
 import Earth from '../../Components/Earth/Earth';
 import FlyingAlien from '../../Components/FlyingAlien/FlyingAlien';
 import StyledDiv from '../../Components/StyledDiv/StyledDiv';

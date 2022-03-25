@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Skill.scss";
+
 import { SiHtml5, SiCss3, SiJavascript, SiReact, SiGithub, SiGit, SiTypescript, SiSass, SiWindowsterminal, SiRedux, SiW3C } from 'react-icons/si';
 import { BiDevices } from 'react-icons/bi';
 

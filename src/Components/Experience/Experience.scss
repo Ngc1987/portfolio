@@ -1,5 +1,5 @@
 .experience {
-	width: 80%;
+	width: 100%;
 	// min-height: 200px;
 	display: flex;
 	flex-direction: column;
@@ -16,14 +16,17 @@
 	
 	&__header {
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
 		width: 100%;
 		margin-top: 20px;
 		
 		&-logo {
 			width: 40px;
 			color: #fff;
-			margin-left: 20px;
+			// margin-left: 20px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -66,9 +69,31 @@
 	}
 }
 
+@media screen and(min-width:560px) {
+	.experience {
+		
+		&__header {
+			flex-direction: row;
+
+			&-employer {
+				// margin-left: -40px;
+				margin-right: 40px;
+			}
+		}
+	}
+}
 @media screen and(min-width:768px) {
 	.experience {
 		width: 45%;
+
+		&__header {
+			// flex-direction: row;
+
+			&-employer {
+				// margin-left: -40px;
+				margin-right: 0px;
+			}
+		}
 	}
 }
 @media screen and(min-width:1100px) {

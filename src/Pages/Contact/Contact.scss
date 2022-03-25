@@ -1,0 +1,60 @@
+.contact {
+	position: relative;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	transition: all 0.5s ease;
+
+	&__description {
+		margin-top: 200px;
+		width: 80%;
+		color: #83cc5f;
+		filter: drop-shadow(0px 0px 10px #6ec444);
+		font-size: 1.8rem;
+	}
+
+	&__links {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin-top: 50px;
+		width: 80%;
+	}
+
+	&__form {
+		width: 80%;
+		padding: 40px 20px;
+		margin-bottom: 100px;
+		border-radius: 10px;
+		background: rgba(255, 255, 255, 0.1);
+		backdrop-filter: blur(5px);
+		box-shadow: 
+			0 0 5px #6ec444,
+			0 0 15px #6ec444,
+			inset 0 0 5px #6ec444,
+			inset 0 0 15px #6ec444,
+		;
+		
+		margin-top: 70px;
+	}
+}
+
+
+@media screen and(min-width: 410px) {
+	.contact {
+		
+		&__links {
+			width: 350px;
+		}
+	}
+}
+@media screen and(min-width: 768px) {
+	.contact {
+		
+		&__form {
+			width: 615px;
+		}
+	}
+}

@@ -5,7 +5,7 @@ export const ExperiencesDatas:ExperienceProps[] = [
 		"dates": "01/2022 to actually",
 	},
 	{
-		"employer": "OpenClassRooms",
+		"employer": "Open Class Rooms",
 		"job": "Web developer student",
 		"dates": "01/2021 to 01/2022",
 	},
