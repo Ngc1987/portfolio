@@ -8,18 +8,13 @@ interface Props {
 
 const About:React.FC = (props) => {
 
-	// Select the lightning element
-	// const marker = useRef() as React.MutableRefObject<HTMLDivElement>;
-	// // Taking the path name of the current page
-	// const pathName = usePathname();
-
-	// function markerColor() {
-
-	// }
-	// console.log(pathName)
-
 	return (
-		<div>About</div>
+
+		<section className="about">
+			<div className="about__description">
+				<h2></h2>
+			</div>
+		</section>
 	)
 }
 

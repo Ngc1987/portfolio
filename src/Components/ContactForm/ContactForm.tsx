@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
 import "./ContactForm.scss";
-import { useForm } from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import { ToastContainer, toast, Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import emailjs, { init } from '@emailjs/browser';
+import ContactFormInput from '../ContactFormInput/ContactFormInput';
+
+interface IFormInput {
+  firstName: String;
+  lastName: String;
+  email: String;
+  numberPhone: String;
+  message: String;
+}
 
 
-const ContactForm = () => {
+const ContactForm:React.FC = () => {
 
 	// Initialize emailJs 
 	init("user_Ch8zKqPzcFNo8oW0WqNgg");
@@ -17,15 +26,15 @@ const ContactForm = () => {
 		handleSubmit,
 		reset,
 		formState: { errors }
-	} = useForm();
+	} = useForm<IFormInput>();
 
 	// State to enable or disable the form
-	const [disabled, setDisabled] = useState(false);
+	const [disabled, setDisabled] = useState<boolean>(false);
 
-	console.log(disabled)
+	// console.log(disabled)
 
 	// Function that displays a success toast on bottom right of the page when form submission is successful
-	const toastifySuccess = () => {
+	const toastifySuccess = ():void => {
 		toast.success('Your message has been successfully sent ! 👽', {
 			position: 'top-center',
 			autoClose: 5000,
@@ -40,13 +49,21 @@ const ContactForm = () => {
 	};
 
 	// Function to take datas and send on an email
-	const onSubmit = async (data) => {
+	const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+
 		const { firstName, lastName, email, message, numberPhone } = data;
+
+		// console.log(data)
+
+		console.log('First name: ', firstName);
+		console.log('Last name: ', lastName);
+		console.log('Email: ', email);
+		console.log('Message: ', message);
+		console.log('Téléphone: ', numberPhone);
 
 		try {
 			// Disable form while processing submission
 			setDisabled(true);
-			console.log(disabled)
 			
 			// Define template params
 			const templateParams = {
@@ -75,7 +92,6 @@ const ContactForm = () => {
 			toastifySuccess();
 			// Re-enable form submission
 			setDisabled(false);
-			console.log(disabled)
 
 		} catch (e) {
 			console.log(e);
@@ -90,7 +106,7 @@ const ContactForm = () => {
 
 					<input type="text"
 						id="firstName"
-						name='firstName'
+						// name='firstName'
 						placeholder='First Name'
 						required
 
@@ -103,13 +119,16 @@ const ContactForm = () => {
 						})} />
 					<label htmlFor="firstName">First Name</label>
 				</div>
-				{errors.firstName && <span className='form__errorMsg'>{errors.firstName.message}</span>}
+				{errors.firstName && <span className='form__errorMsg'>{errors.firstName}</span>}
+				
+				
+				
 				<div className="inputBox" >
 
 
 					<input type="text"
 						id="lastName"
-						name='lastName'
+						// name='lastName'
 						placeholder='Last Name'
 						required
 
@@ -122,11 +141,11 @@ const ContactForm = () => {
 						})} />
 					<label htmlFor="lastName">Last Name</label>
 				</div>
-				{errors.lastName && <span className='form__errorMsg'>{errors.lastName.message}</span>}
+				{errors.lastName && <span className='form__errorMsg'>{errors.lastName}</span>}
 				<div className="inputBox" >
 
 					<input type="email"
-						name='email'
+						// name='email'
 						placeholder='E-mail'
 						required
 
@@ -142,7 +161,7 @@ const ContactForm = () => {
 
 					<input type="text"
 						id="numberPhone"
-						name='numberPhone'
+						// name='numberPhone'
 						placeholder='Number Phone'
 						required
 
@@ -155,16 +174,16 @@ const ContactForm = () => {
 						})} />
 					<label htmlFor="numberPhone">Number Phone</label>
 				</div>
-				{errors.numberPhone && <span className='form__errorMsg'>{errors.numberPhone.message}</span>}
+				{errors.numberPhone && <span className='form__errorMsg'>{errors.numberPhone}</span>}
 
 
 				<div className="inputBox" >
 
-					<textarea type="text"
+					<textarea 
 						id="message"
 						rows={5}
 						placeholder='Message'
-						name='message'
+						// name='message'
 						required
 
 						{...register('message', {
