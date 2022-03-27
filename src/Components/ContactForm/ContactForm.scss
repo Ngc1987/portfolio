@@ -8,7 +8,7 @@
 		position:relative;
 		width: 100%;
 		// border: 1px solid black;
-		padding-bottom: 25px;
+		padding-bottom: 30px;
 		
 		&::before {
 			// content:'';
@@ -41,7 +41,7 @@
 		}
 		
 		label {
-			font-size: 1.4rem;
+			font-size: 1.6rem;
 			position: absolute;
 			top: 4px;
 			left: 4px;
@@ -63,7 +63,7 @@
 			color: #fff;
 			transition: all 0.5s ease;
 			font-family: nasa;
-			font-size: 1.3rem;
+			font-size: 1.6rem;
 			border: none;
 			border-top-right-radius: 5px;
 			border-top-left-radius: 5px;
@@ -75,7 +75,8 @@
 			
 			&::placeholder {
 				transition: all 0.5s ease;
-				font-size: 1.4rem;
+				font-size: 1.6rem;
+				margin-right: -5px;
 				color: rgba(255, 255, 255, 0.418);
 			}
 			
@@ -88,23 +89,38 @@
 			}
 	
 			&:focus ~ label {
-				top: -18px;
-				left: 0;
+				top: -21px;
+				left: 2px;
 				color: #6ec444;
-				font-size: 12px;
+				font-size: 1.5rem;
 				// box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.1),
 				// 				0 0 3px 3px rgba(255, 255, 255, 0.1);
 				// border: 1px solid transparent;
 			}
 			&:valid ~ label {
-				top: -18px;
-				left: 0;
+				top: -21px;
+				left: 2px;
 				color: #6ec444;
-				font-size: 12px;
+				font-size: 1.5rem;
 				// box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.1),
 				// 				0 0 3px 3px rgba(255, 255, 255, 0.1);
 				// border: 1px solid transparent;
 			}
+		}
+
+		&__light {
+			position: absolute;
+			right: 10px;
+			bottom: 42px;
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background-color: rgb(129, 148, 129);
+			transition: all 0.5s ease;
+			// box-shadow: 0 0 5px #0f0,
+            //     0 0 10px #0f0,
+            //     0 0 20px #0f0,
+            //     0 0 40px #0f0;
 		}
 	}
 
@@ -146,6 +162,11 @@
 		margin-top: -22px;
 		margin-bottom: 24px;
 	}
+}
+
+#notifyToast {
+	font-size: 1.8rem;
+	font-family: nasa;
 }
 
 @media screen and (min-width: 768px) {

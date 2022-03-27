@@ -4,7 +4,6 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { ToastContainer, toast, Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import emailjs, { init } from '@emailjs/browser';
-import ContactFormInput from '../ContactFormInput/ContactFormInput';
 
 interface IFormInput {
   firstName: String;
@@ -47,6 +46,8 @@ const ContactForm:React.FC = () => {
 			toastId: 'notifyToast'
 		});
 	};
+
+	
 
 	// Function to take datas and send on an email
 	const onSubmit: SubmitHandler<IFormInput> = async (data) => {
@@ -98,6 +99,53 @@ const ContactForm:React.FC = () => {
 		}
 	};
 
+	const firstName = register('firstName', 
+							{ required: { value: true, message: 'Veuillez indiquer votre prénom' },
+							  maxLength: { value: 30,
+								  		   message: 'Please enter less than 30 characters.'}});
+
+	const onInputChange = (event: any) => {
+		console.log(event.target);
+		let light = event.target.nextElementSibling;
+		if(event.target.name === "firstName" || event.target.name === "lastName") {
+			if(event.target.value.length > 3){
+				light.style.backgroundColor= "#0f0";
+				light.style.boxShadow = "0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0,0 0 40px #0f0"
+			} else {
+				light.style.backgroundColor= "#f00";
+				light.style.boxShadow = "0 0 5px #f00, 0 0 10px #f00, 0 0 20px #f00,0 0 40px #f00"
+			}
+		}else if(event.target.name === "email"){
+			if(event.target.value.length > 3){
+				const emailPattern = /^[a-zA-Z-.]+@[a-zA-Z-]+\.[a-zA-Z]{2,6}$/;
+				if(emailPattern.test(event.target.value)){
+					light.style.backgroundColor= "#0f0";
+					light.style.boxShadow = "0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0,0 0 40px #0f0"
+				} else {
+					light.style.backgroundColor= "#f00";
+					light.style.boxShadow = "0 0 5px #f00, 0 0 10px #f00, 0 0 20px #f00,0 0 40px #f00"
+				}
+			}
+		} else if(event.target.name === "numberPhone") {
+			if(event.target.value.length > 3){
+				const phonePattern = /^[0-9+]{8,14}$/;
+				if(phonePattern.test(event.target.value)){
+					light.style.backgroundColor= "#0f0";
+					light.style.boxShadow = "0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0,0 0 40px #0f0"
+				} else {
+					light.style.backgroundColor= "#f00";
+					light.style.boxShadow = "0 0 5px #f00, 0 0 10px #f00, 0 0 20px #f00,0 0 40px #f00"
+				}
+			}
+		} else if (event.target.name === "message") {
+			if(event.target.value.length > 4){
+				light.style.backgroundColor= "#0f0";
+				light.style.boxShadow = "0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0,0 0 40px #0f0"
+			} 
+		}
+	}
+
+
 	return (
 		<>
 			<form onSubmit={handleSubmit(onSubmit)} className="form">
@@ -109,14 +157,11 @@ const ContactForm:React.FC = () => {
 						// name='firstName'
 						placeholder='First Name'
 						required
-
-						{...register('firstName', {
-							required: { value: true, message: 'Veuillez indiquer votre prénom' },
-							maxLength: {
-								value: 30,
-								message: 'Please enter less than 30 characters.'
-							}
-						})} />
+						{...firstName}
+						onInput={(e) => onInputChange(e)}
+						
+						/>
+					<div className="inputBox__light"></div>
 					<label htmlFor="firstName">First Name</label>
 				</div>
 				{errors.firstName && <span className='form__errorMsg'>{errors.firstName}</span>}
@@ -131,6 +176,8 @@ const ContactForm:React.FC = () => {
 						// name='lastName'
 						placeholder='Last Name'
 						required
+						onInput={(e) => onInputChange(e)}
+						
 
 						{...register('lastName', {
 							required: { value: true, message: 'Veuillez indiquer votre nom' },
@@ -139,6 +186,7 @@ const ContactForm:React.FC = () => {
 								message: 'Please enter less than 30 characters.'
 							}
 						})} />
+						<div className="inputBox__light"></div>
 					<label htmlFor="lastName">Last Name</label>
 				</div>
 				{errors.lastName && <span className='form__errorMsg'>{errors.lastName}</span>}
@@ -149,10 +197,13 @@ const ContactForm:React.FC = () => {
 						placeholder='E-mail'
 						required
 
+						onInput={(e) => onInputChange(e)}
+
 						{...register('email', {
 							required: true,
 							pattern: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 						})} />
+						<div className="inputBox__light"></div>
 					<label htmlFor="email" id="email">E-mail</label>
 				</div>
 				{errors.email && (<span className='form__errorMsg'>Veuillez indiquer une adresse email valide</span>)}
@@ -165,6 +216,8 @@ const ContactForm:React.FC = () => {
 						placeholder='Number Phone'
 						required
 
+						onInput={(e) => onInputChange(e)}
+
 						{...register('numberPhone', {
 							required: { value: true, message: 'Saisissez votre numéro de téléphone' },
 							maxLength: {
@@ -172,6 +225,7 @@ const ContactForm:React.FC = () => {
 								message: 'Please enter a valid phone number.'
 							},
 						})} />
+						<div className="inputBox__light"></div>
 					<label htmlFor="numberPhone">Number Phone</label>
 				</div>
 				{errors.numberPhone && <span className='form__errorMsg'>{errors.numberPhone}</span>}
@@ -186,10 +240,13 @@ const ContactForm:React.FC = () => {
 						// name='message'
 						required
 
+						onInput={(e) => onInputChange(e)}
+
 						{...register('message', {
 							required: true
 						})}
 					/>
+					<div className="inputBox__light"></div>
 					<label htmlFor="message">Message</label>
 
 				</div>
