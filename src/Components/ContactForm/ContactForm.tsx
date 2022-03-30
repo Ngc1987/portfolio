@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import "./ContactForm.scss";
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { ToastContainer, toast, Flip } from 'react-toastify';
@@ -26,6 +26,13 @@ const ContactForm:React.FC = () => {
 	// Initialize emailJs 
 	init("user_Ch8zKqPzcFNo8oW0WqNgg");
 
+
+	const firstNameLight= useRef() as React.MutableRefObject<HTMLDivElement>;
+	const lastNameLight= useRef() as React.MutableRefObject<HTMLDivElement>;
+	const emailLight= useRef() as React.MutableRefObject<HTMLDivElement>;
+	const numberPhoneLight= useRef() as React.MutableRefObject<HTMLDivElement>;
+	const messageLight= useRef() as React.MutableRefObject<HTMLDivElement>;
+
 	// Initialize React Hook Form
 	const {
 		register,
@@ -49,7 +56,7 @@ const ContactForm:React.FC = () => {
 	// State to show or no the error messages
 	const [showErrorMessages, setShowErrorMessages] = useState<boolean>(false);
 
-
+	// console.log(firstNameLight)
 
 	// Function that displays a success toast on bottom right of the page when form submission is successful
 	const toastifySuccess = ():void => {
@@ -108,6 +115,16 @@ const ContactForm:React.FC = () => {
 				toastifySuccess();
 				// Re-enable form submission
 				setDisabled(false);
+				firstNameLight.current.style.backgroundColor = "rgb(129, 148, 129)";
+				firstNameLight.current.style.boxShadow = "none";
+				lastNameLight.current.style.backgroundColor = "rgb(129, 148, 129)";
+				lastNameLight.current.style.boxShadow = "none";
+				emailLight.current.style.backgroundColor = "rgb(129, 148, 129)";
+				emailLight.current.style.boxShadow = "none";
+				numberPhoneLight.current.style.backgroundColor = "rgb(129, 148, 129)";
+				numberPhoneLight.current.style.boxShadow = "none";
+				messageLight.current.style.backgroundColor = "rgb(129, 148, 129)";
+				messageLight.current.style.boxShadow = "none";
 	
 			} catch (e) {
 				console.log(e);
@@ -175,6 +192,15 @@ const ContactForm:React.FC = () => {
 			})
 			}
 		}
+
+		if(event.target.name === "email") {
+			if(event.target.value !== "") {
+				event.target.classList.add("isValid")
+			}
+			if(event.target.value === "") {
+				event.target.classList.remove("isValid")
+			}
+		}
 		
 		if(event.target.name === "numberPhone" && event.target.value.length > 3){
 			
@@ -225,7 +251,7 @@ const ContactForm:React.FC = () => {
 						onInput={(e) => onInputChange(e)}
 						{...register('firstName', {})}
 					/>
-					<div className="inputBox__light"></div>
+					<div ref={firstNameLight} className="inputBox__light"></div>
 					<label htmlFor="firstName">First Name</label>
 				</div>
 				{showErrorMessages && <span className='form__errorMsg'>{errorMessages.firstName}</span>}
@@ -239,7 +265,7 @@ const ContactForm:React.FC = () => {
 						onInput={(e) => onInputChange(e)}
 						{...register('lastName', {})} 
 					/>
-					<div className="inputBox__light"></div>
+					<div ref={lastNameLight} className="inputBox__light"></div>
 					<label htmlFor="lastName">Last Name</label>
 				</div>
 				{showErrorMessages && <span className='form__errorMsg'>{errorMessages.lastName}</span>}
@@ -251,7 +277,7 @@ const ContactForm:React.FC = () => {
 						onInput={(e) => onInputChange(e)}
 						{...register('email', {})} 
 					/>
-					<div className="inputBox__light"></div>
+					<div ref={emailLight} className="inputBox__light"></div>
 					<label htmlFor="email" id="email">E-mail</label>
 				</div>
 				{showErrorMessages && <span className='form__errorMsg'>{errorMessages.email}</span>}
@@ -264,7 +290,7 @@ const ContactForm:React.FC = () => {
 						onInput={(e) => onInputChange(e)}
 						{...register('numberPhone', {})} 
 					/>
-					<div className="inputBox__light"></div>
+					<div ref={numberPhoneLight} className="inputBox__light"></div>
 					<label htmlFor="numberPhone">Number Phone</label>
 				</div>
 				{showErrorMessages && <span className='form__errorMsg'>{errorMessages.numberPhone}</span>}
@@ -279,7 +305,7 @@ const ContactForm:React.FC = () => {
 						onInput={(e) => onInputChange(e)}
 						{...register('message', {})}
 					/>
-					<div className="inputBox__light"></div>
+					<div ref={messageLight} className="inputBox__light"></div>
 					<label htmlFor="message">Message</label>
 				</div>
 				{showErrorMessages && <span className='form__errorMsg'>{errorMessages.message}</span>}

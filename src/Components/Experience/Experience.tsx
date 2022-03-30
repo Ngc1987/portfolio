@@ -9,12 +9,16 @@ interface Props {
 	employer: string
 	job: string;
 	dates: string;
+	index: number;
+	showExp: boolean;
 }
 
-const Experience:React.FC<Props> = ({employer, job, dates}) => {
+const Experience:React.FC<Props> = ({employer, job, dates, index, showExp}) => {
+
+	// console.log(index)
 
 	return (
-		<article className="experience" >
+		<article className={`${index < 3 ? "experience showExp" : index > 2 && showExp ? "experience showExp" : "experience hideExp"}`} >
 			<div className="experience__header">
 				<div className="experience__header-logo">
 					{

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./Skill.scss";
 
 import { SiHtml5, SiCss3, SiJavascript, SiReact, SiGithub, SiGit, SiTypescript, SiSass, SiWindowsterminal, SiRedux, SiW3C } from 'react-icons/si';
@@ -9,9 +9,35 @@ interface Props {
 }
 
 const Skill:React.FC<Props> = ({type}) => {
+
+	const [className, setClassName] = useState("skill");
+
+
+	const animsArray = ["anim1", "anim2", "anim3", "anim4", "anim5", "anim6", ]
+
+	const randomAnim = () => {
+		const randomNumber = Math.floor(Math.random() * 6);
+		console.log(randomNumber)
+
+		setClassName(`skill ${animsArray[randomNumber]}`)
+		setTimeout(() => {
+			setClassName(`skill`)
+			
+		}, 1000)
+
+		
+	}
+	
+	const stopAnim = () => {
+		setClassName(`skill`)
+
+	}
 	
 	return (
-		<div className="skill" >
+		<div className={className} 
+			// onMouseEnter={randomAnim}
+			// onMouseLeave={stopAnim} 
+			>
 			{
 				type === "html" ? <SiHtml5/> : 
 				type === "css" ? <SiCss3/> : 

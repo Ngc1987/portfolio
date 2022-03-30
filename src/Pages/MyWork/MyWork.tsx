@@ -21,7 +21,8 @@ const MyWork:React.FC = () => {
 										description={obj.description}
 										githubLink={obj.githubLink}
 										liveDemoLink={obj.liveDemoLink}
-										key={index} />)
+										key={index}
+										inProgress={obj.inProgress} />)
 				})}
 			</div>
 		</section>

@@ -2,16 +2,10 @@ import React from 'react';
 import "./WorkSample.scss";
 import { ImGithub } from 'react-icons/im';
 import { GiEarthAmerica } from 'react-icons/gi';
+import { WorkSampleProps } from '../../Datas/WorkSampleDatas';
 
-interface Props {
-	title: string;
-	image: string;
-	description: string;
-	liveDemoLink: string;
-	githubLink: string;
-}
 
-const WorkSample:React.FC<Props> = ({title, image, description, githubLink, liveDemoLink}) => {
+const WorkSample:React.FC<WorkSampleProps> = ({title, image, description, githubLink, liveDemoLink, inProgress}) => {
 	
 	return (
 		<article className="workSample">
@@ -19,20 +13,44 @@ const WorkSample:React.FC<Props> = ({title, image, description, githubLink, live
 				<h2>{title}</h2>
 			</div>
 			<div className="workSample__image">
-				<img src={image} alt={`Sample pic of ${title} website`} />
+				{inProgress ? 
+				<>
+					<ul className="inProgress__loader" >
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<p className="inProgress__text">In progress...</p>
+				</>
+					:
+					<img src={image} alt={`Sample pic of ${title} website`} />
+				}
 			</div>
 			<div className="workSample__description">
 				<p>{description}</p>
 			</div>
 			<div className="workSample__links">
-				<div className="workSample__links-github">
-					<ImGithub/>
-					<a href={githubLink}>GitHub repo</a>
-				</div>
-				<div className="workSample__links-liveDemo">
-					<GiEarthAmerica/>
-					<a href={liveDemoLink}>{liveDemoLink.includes("npmjs") ? "Npm repo" : "Live demo"}</a>
-				</div>
+
+				{
+					githubLink === "" ?
+					<></>
+					:
+					<div className="workSample__links-liveDemo">
+						<ImGithub/>
+						<a href={githubLink}>GitHub repo</a>
+					</div>
+				}
+				{
+					liveDemoLink === "" ?
+					<></>
+					:
+					<div className="workSample__links-liveDemo">
+						<GiEarthAmerica/>
+						<a href={liveDemoLink}>{liveDemoLink.includes("npmjs") ? "Npm repo" : "Live demo"}</a>
+					</div>
+				}
 			</div>
 		</article>
 	)
