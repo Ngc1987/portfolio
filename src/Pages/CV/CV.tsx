@@ -26,7 +26,7 @@ const CV:React.FC = () => {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			index === 4 ? setIndex(0) : setIndex(index + 1);
-		}, 8000)
+		}, 1000)
 		
 		return () => {
 			clearInterval(interval);
@@ -84,11 +84,13 @@ const CV:React.FC = () => {
 					<div className="cv__content__cv-skills">
 						<Skill type="html" />
 						<Skill type="css" />
+						<Skill type="tailwind" />
 						<Skill type="sass" />
 						<Skill type="javascript" />
 						<Skill type="typescript" />
 						<Skill type="react" />
 						<Skill type="redux" />
+						<Skill type="mongo" />
 						<Skill type="git" />
 						<Skill type="github" />
 						<Skill type="terminal" />

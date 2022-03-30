@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./Skill.scss";
 
-import { SiHtml5, SiCss3, SiJavascript, SiReact, SiGithub, SiGit, SiTypescript, SiSass, SiWindowsterminal, SiRedux, SiW3C } from 'react-icons/si';
+import { SiTailwindcss, SiMongodb, SiHtml5, SiCss3, SiJavascript, SiReact, SiGithub, SiGit, SiTypescript, SiSass, SiWindowsterminal, SiRedux, SiW3C } from 'react-icons/si';
 import { BiDevices } from 'react-icons/bi';
 
 interface Props {
@@ -50,6 +50,8 @@ const Skill:React.FC<Props> = ({type}) => {
 				type === "terminal" ? <SiWindowsterminal/> : 
 				type === "redux" ? <SiRedux/> : 
 				type === "responsive" ? <BiDevices/> : 
+				type === "tailwind" ? <SiTailwindcss/> : 
+				type === "mongo" ? <SiMongodb/> : 
 									<SiW3C/>
 			}
 			<p>
@@ -64,6 +66,8 @@ const Skill:React.FC<Props> = ({type}) => {
 				type === "sass" ? "Sass" : 
 				type === "terminal" ? "Terminal": 
 				type === "redux" ? "Redux" : 
+				type === "mongo" ? "MongoDb" : 
+				type === "tailwind" ? "Tailwind CSS" : 
 				type === "responsive" ? "Responsives websites" : 
 									"Web accessibility"
 			}

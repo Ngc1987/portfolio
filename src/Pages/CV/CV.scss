@@ -138,7 +138,7 @@
 				&-text {
 					position: relative;
 					width: 95%;
-					height: 100px;
+					height: 180px;
 
 					p {
 						position: absolute;
@@ -146,7 +146,7 @@
 						left: 50%;
 						width: 90%;
 						transform: translate(-50%, -50%);
-						padding: 10px 20px;
+						padding: 20px 20px;
 						font-size: 1.6rem;
 						filter: none;
 						color: #fff;
@@ -331,6 +331,24 @@
 	}
 }
 
+@media screen and(min-width: 600px) {
+	.cv {
+
+		&__content {
+
+			&__cv {
+
+				&-skills {
+
+					&-text {
+						height: 140px;
+					}
+				}
+			}
+		}
+	}
+}
+
 @media screen and(min-width: 768px) {
 	.cv {
 
@@ -345,6 +363,17 @@
 				&-intro {
 					font-size: 1.3rem;
 				}
+
+				&-skills {
+
+					&-text {
+
+						p {
+
+							font-size: 1.8rem;
+						}
+					}
+				}
 			}
 
 			&__experiences {
@@ -355,6 +384,10 @@
 					flex-wrap: wrap;
 					justify-content: space-between;
 					align-items: flex-start;
+				}
+
+				p {
+					font-size: 1.7rem;
 				}
 			}
 		}
@@ -384,17 +417,17 @@
 	5% {
 		opacity: 1;
 	}
-	45% {
-		filter: none;
-	}
-	60% {
-		filter: drop-shadow(0px 0px 5px #fff);
-	}
-	75% {
-		filter: none;
-	}
+	// 45% {
+	// 	filter: none;
+	// }
+	// 60% {
+	// 	filter: drop-shadow(0px 0px 5px #fff);
+	// }
+	// 75% {
+	// 	filter: none;
+	// }
 	90% {
-		filter: none;
+		// filter: none;
 		transform: translate(-50%, -50%);
 		opacity: 1;
 	}
@@ -407,12 +440,13 @@
 	95% {
 		// transform: translate(-50%, 50px);
 		opacity: 0;
+		// transform: translate(-50%, -60%);
 		// opacity: 1;
 	}
 	100% {
 		// color: #e2afb4;
 		opacity: 0;
-		transform: translate(-50%, -60%);
+		transform: translate(-50%, -80%);
 	}
 
 }
