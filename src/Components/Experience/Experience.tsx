@@ -5,7 +5,7 @@ import { SiMcdonalds } from 'react-icons/si';
 import { GiChimney } from 'react-icons/gi';
 import { FaLaptopCode } from 'react-icons/fa';
 
-interface Props {
+type Props = {
 	employer: string
 	job: string;
 	dates: string;

@@ -5,14 +5,14 @@ import { ToastContainer, toast, Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import emailjs, { init } from '@emailjs/browser';
 
-interface IFormInput {
+type IFormInput = {
   firstName: String;
   lastName: String;
   email: String;
   numberPhone: String;
   message: String;
 }
-interface Errors {
+type Errors = {
   firstName: string | null;
   lastName: string | null;
   email: string | null;
@@ -241,7 +241,7 @@ const ContactForm:React.FC = () => {
 
 	return (
 		<>
-			<form onSubmit={handleSubmit(onSubmit)} className="form">
+			<form onSubmit={handleSubmit(onSubmit)} className="form" data-testid="form">
 
 				<div className="inputBox" >
 					<input type="text"

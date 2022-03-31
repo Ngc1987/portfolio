@@ -5,7 +5,7 @@ import { SiLinkedin, SiGithub } from 'react-icons/si';
 import { MdAttachEmail } from 'react-icons/md';
 import { FaPhoneSquare } from 'react-icons/fa';
 
-interface Props {
+type Props = {
 	type: string;
 }
 

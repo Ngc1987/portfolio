@@ -4,7 +4,7 @@ import HamburgerButton from '../HamburgerButton/HamburgerButton';
 import { slide as Menu } from 'react-burger-menu';
 import { Link } from 'react-router-dom';
 
-export interface Props  {
+export type Props = {
 	isOpen: boolean;
 	setOpen: () => void;
 	onToggle: (toggled: boolean) => void;

@@ -1,7 +1,7 @@
 import "./HiAlien.scss";
 import Eye from '../Eye/Eye';
 
-interface Props {
+type Props = {
 	className?: string;
 }
 

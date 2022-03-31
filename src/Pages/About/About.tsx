@@ -1,18 +1,12 @@
-import React, { useRef } from "react";
+import React from "react";
 import "./About.scss";
-import usePathname from '../../Hooks/usePathname';
-import HiAlien from '../../Components/HiAlien/HiAlien';
-import StyledDiv from '../../Components/StyledDiv/StyledDiv';
 
 import {
   MouseParallaxChild,
   MouseParallaxContainer
 } from "react-parallax-mouse";
-interface Props {
-	location?: string;
-}
 
-const About:React.FC = (props) => {
+const About:React.FC = () => {
 
 	return (
 

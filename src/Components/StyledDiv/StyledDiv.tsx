@@ -1,7 +1,7 @@
 import React from 'react';
 import "./StyledDiv.scss";
 
-interface Props {
+type Props = {
 	className: string;
 }
 

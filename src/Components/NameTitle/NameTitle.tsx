@@ -1,13 +1,11 @@
 import React, { useRef } from 'react';
-import "./Title.scss";
-import { useEffect } from 'react';
+import "./NameTitle.scss";
 
-interface Props {
+type Props = {
 	className: string;
-	size?: string;
 }
 
-const Title:React.FC<Props> = ({className, size}) => {
+const NameTitle:React.FC<Props> = ({className}) => {
 
 	// Making a refs array
 	const revealRefs = useRef<SVGPathElement[]>([]);
@@ -20,20 +18,20 @@ const Title:React.FC<Props> = ({className, size}) => {
         }
     };
 
-	// Fetch the path length for each ref to set the good parameters on the css
-	useEffect(() => {
-		// console.log(revealRefs);
-		revealRefs.current.forEach((el) => {
-			if(el instanceof SVGPathElement) {
-				const line = el.getTotalLength();
-			}
-		})
+	// Fetch the path length for each ref to set the css properties. Only needed for dev .
+	// useEffect(() => {
+	// 	// console.log(revealRefs);
+	// 	revealRefs.current.forEach((el) => {
+	// 		if(el instanceof SVGPathElement) {
+	// 			const line = el.getTotalLength();
+	// 		}
+	// 	})
 		
-	})
+	// })
 	
 	return (
 		
-		<div className={`title ${className}`} >
+		<div className={`title ${className}`} tabIndex={0} >
 			<svg className="title__svg" width="444" height="192" viewBox="0 0 444 192" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<mask id="path-1-inside-1_2_5" fill="white">
 				<path ref={pathRef} d="M59.76 0L57.06 15H40.56L34.74 48H16.74L22.56 15H6.05999L8.75999 0H59.76Z"/>
@@ -95,4 +93,4 @@ const Title:React.FC<Props> = ({className, size}) => {
   	)
 }
 
-export default Title;
+export default NameTitle;

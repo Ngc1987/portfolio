@@ -1,0 +1,202 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> DesktopNav/DesktopNav.tsx</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">Sample Documentation</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"></div><div class="category"><h2>Components</h2><h3>Global</h3><ul><li><a href="global.html#DesktopNav">DesktopNav</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>DesktopNav/DesktopNav.tsx</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useEffect, useRef } from 'react';
+import "./DesktopNav.scss";
+import usePathname from '../../Hooks/usePathname';
+import {Link} from "react-router-dom";
+
+/**
+ * Component DesktopNav
+ * @category Components
+ * @remarks
+ *  Example of usage
+ * ```ts
+ *  &lt;Icon name="about" size="2vw" color="about" hover="active"/>
+ * ```
+ * 
+ * @example &lt;DesktopNav/>
+ * @return  React.ReactNode
+ */
+const DesktopNav:React.FC = () => {
+	
+
+	// Select the ball div element
+	const marker = useRef() as React.MutableRefObject&lt;HTMLDivElement>;
+	
+	// Select the ball element
+	const ball = useRef() as React.MutableRefObject&lt;HTMLDivElement>;
+	// Taking the path name of the current page
+	const pathName = usePathname();
+
+	// Making the marker move when the menu is on hover	
+	function customizeMarker(e: any) {
+		marker.current.style.left = e.target.offsetLeft + "px";
+		marker.current.style.width = e.target.clientWidth + "px";
+
+	}
+
+	// Setting the color of the ball according to the url path
+	function keepMarkerColor(elem: any) {
+		switch(pathName) {
+			case "/" :
+				elem.style.background = "#5da6ff";
+				elem.style.boxShadow = "0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff, 0 0 60px #5da6ff";
+				break;
+			case "/mywork" :
+				elem.style.background = "#b65dff";
+				elem.style.boxShadow = "0 0 15px #b65dff, 0 0 30px #b65dff, 0 0 45px #b65dff, 0 0 60px #b65dff";
+				break;
+			case "/cv" :
+				elem.style.background = "#ff5d6d";
+				elem.style.boxShadow = "0 0 15px #ff5d6d, 0 0 30px #ff5d6d, 0 0 45px #ff5d6d, 0 0 60px #ff5d6d";
+				break;
+			case "/about" :
+				elem.style.background = "#ffa35d";
+				elem.style.boxShadow = "0 0 15px #ffa35d, 0 0 30px #ffa35d, 0 0 45px #ffa35d, 0 0 60px #ffa35d";
+				break;
+			case "/contact" :
+				elem.style.background = "#6ec444";
+				elem.style.boxShadow = "0 0 15px #6ec444, 0 0 30px #6ec444, 0 0 45px #6ec444, 0 0 60px #6ec444";
+				break;
+		}
+	}
+	useEffect(() => {
+		keepMarkerColor(ball.current)
+	})
+
+	
+	return (
+
+		&lt;nav className="desktopNav" >
+			&lt;Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/">Home&lt;/Link> 
+			&lt;Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/mywork">My work&lt;/Link>
+			&lt;Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/cv">CV&lt;/Link>
+			&lt;Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/about">About me&lt;/Link>
+			&lt;Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/contact">Contact&lt;/Link>
+		
+			&lt;div id="marker" ref={marker}>
+				&lt;div className="ball" ref={ball}>&lt;/div>
+			&lt;/div>
+		&lt;/nav>
+	)
+}
+
+export default DesktopNav;</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+
+</body>
+</html>

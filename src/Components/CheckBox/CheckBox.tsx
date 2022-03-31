@@ -1,12 +1,12 @@
 import React from 'react';
 import "./CheckBox.scss";
 
-interface Props {
+type Props = {
 	inAlien: boolean;
 	changeTextLanguage: () => void;
-}
+};
 
-const CheckBox:React.FC<Props> = ({inAlien, changeTextLanguage}) => {
+export const CheckBox:React.FC<Props> = ({inAlien, changeTextLanguage}) => {
 
 	return (
 		
@@ -21,6 +21,4 @@ const CheckBox:React.FC<Props> = ({inAlien, changeTextLanguage}) => {
 			<i className="checkbox__indicator" ></i>
 		</label>
 	)
-}
-
-export default CheckBox;
+};

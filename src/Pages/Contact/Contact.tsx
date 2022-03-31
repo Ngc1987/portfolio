@@ -3,7 +3,6 @@ import "./Contact.scss";
 
 import ContactLink from "../../Components/ContactLink/ContactLink";
 import ContactForm from "../../Components/ContactForm/ContactForm";
-import Alien from "../../Components/Alien/Alien";
 
 
 const Contact:React.FC = () => {

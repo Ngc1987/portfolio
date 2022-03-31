@@ -3,7 +3,18 @@ import "./DesktopNav.scss";
 import usePathname from '../../Hooks/usePathname';
 import {Link} from "react-router-dom";
 
-
+/**
+ * Component DesktopNav
+ * @category Components
+ * @remarks
+ *  Example of usage
+ * ```ts
+ *  <Icon name="about" size="2vw" color="about" hover="active"/>
+ * ```
+ * 
+ * @example <DesktopNav/>
+ * @return  React.ReactNode
+ */
 const DesktopNav:React.FC = () => {
 	
 

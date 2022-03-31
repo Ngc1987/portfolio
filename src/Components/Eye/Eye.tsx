@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import "./Eye.scss";
 import useMousePosition from '../../Hooks/useMousePosition';
 
-interface Props {
+type Props = {
 	className: string;
 	size?: string;
 	color?: string;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Sling as Hamburger }  from "hamburger-react";
 
-interface Props  {
+type Props = {
 	toggled: boolean;
 	toggle: () => void;
 	onToggle: (toggled: boolean) => void;

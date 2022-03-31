@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./CV.scss";
 
-import CheckBox from "../../Components/CheckBox/CheckBox";
+import {CheckBox} from "../../Components/CheckBox/CheckBox";
 import Skill from "../../Components/Skill/Skill";
 import Experience from "../../Components/Experience/Experience";
 
-import {ExperiencesDatas} from "../../Datas/CvExperiencesDatas"
-import useRef from 'react';
+import {ExperiencesDatas} from "../../Datas/CvExperiencesDatas";
 import { IoIosArrowDown } from 'react-icons/io';
 
 const CV:React.FC = () => {
@@ -26,7 +25,7 @@ const CV:React.FC = () => {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			index === 4 ? setIndex(0) : setIndex(index + 1);
-		}, 1000)
+		}, 8000)
 		
 		return () => {
 			clearInterval(interval);
@@ -82,20 +81,20 @@ const CV:React.FC = () => {
 					</div>
 
 					<div className="cv__content__cv-skills">
-						<Skill type="html" />
-						<Skill type="css" />
-						<Skill type="tailwind" />
-						<Skill type="sass" />
-						<Skill type="javascript" />
-						<Skill type="typescript" />
-						<Skill type="react" />
-						<Skill type="redux" />
-						<Skill type="mongo" />
-						<Skill type="git" />
-						<Skill type="github" />
-						<Skill type="terminal" />
-						<Skill type="responsive" />
-						<Skill type="w3c" />
+						<Skill name="html" />
+						<Skill name="css" />
+						<Skill name="tailwind" />
+						<Skill name="sass" />
+						<Skill name="javascript" />
+						<Skill name="typescript" />
+						<Skill name="react" />
+						<Skill name="redux" />
+						<Skill name="mongo" />
+						<Skill name="git" />
+						<Skill name="github" />
+						<Skill name="terminal" />
+						<Skill name="responsive" />
+						<Skill name="w3c" />
 
 						<div className="cv__content__cv-skills-text">
 							<p className={index === 0 ? "showText" : "hideText"} >I love bringing life to new ideas and projects, technically and visually.</p>
