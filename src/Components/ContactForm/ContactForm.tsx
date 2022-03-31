@@ -246,6 +246,7 @@ const ContactForm:React.FC = () => {
 				<div className="inputBox" >
 					<input type="text"
 						id="firstName"
+						data-testid="formInput"
 						placeholder='First Name'
 						required
 						onInput={(e) => onInputChange(e)}
@@ -259,6 +260,7 @@ const ContactForm:React.FC = () => {
 				<div className="inputBox" >
 					<input type="text"
 						id="lastName"
+						data-testid="formInput"
 						placeholder='Last Name'
 						required
 						maxLength={30}
@@ -272,6 +274,7 @@ const ContactForm:React.FC = () => {
 
 				<div className="inputBox" >
 					<input type="email"
+					data-testid="formInput"
 						placeholder='E-mail'
 						required
 						onInput={(e) => onInputChange(e)}
@@ -285,6 +288,7 @@ const ContactForm:React.FC = () => {
 				<div className="inputBox" >
 					<input type="text"
 						id="numberPhone"
+						data-testid="formInput"
 						placeholder='Number Phone'
 						required
 						onInput={(e) => onInputChange(e)}
@@ -299,6 +303,7 @@ const ContactForm:React.FC = () => {
 				<div className="inputBox" >
 					<textarea 
 						id="message"
+						data-testid="formInput"
 						rows={5}
 						placeholder='Message'
 						required

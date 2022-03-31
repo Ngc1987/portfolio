@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./CV.scss";
 
-import {CheckBox} from "../../Components/CheckBox/CheckBox";
+import CheckBox from "../../Components/CheckBox/CheckBox";
 import Skill from "../../Components/Skill/Skill";
 import Experience from "../../Components/Experience/Experience";
 
@@ -19,8 +19,6 @@ const CV:React.FC = () => {
 	const [inAlien, setInAlien] = useState<boolean>(false);
 	// State for the text to show just below the skills samples
 	const [index, setIndex] = useState<number>(0);
-
-	console.log(index)
 	
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -96,7 +94,7 @@ const CV:React.FC = () => {
 						<Skill name="responsive" />
 						<Skill name="w3c" />
 
-						<div className="cv__content__cv-skills-text">
+						<div className="cv__content__cv-skills-text" data-testid="skillsText" >
 							<p className={index === 0 ? "showText" : "hideText"} >I love bringing life to new ideas and projects, technically and visually.</p>
 							<p className={index === 1 ? "showText" : "hideText"} >I think the users experience must be the priority, and be pleasant and enjoying. And it's important for all the users.</p>
 							
@@ -109,17 +107,6 @@ const CV:React.FC = () => {
 						</div>
 					</div>
 				</div>
-
-				{/* <div className="cv__content__text">
-					<p>I love bringing life to new projects and ideas, technically and visually.</p>
-					<br />
-					<p>I think the users experience must be the priority, and be pleasant and enjoying. And it's important for all the users.</p>
-					<br />
-					<p>Also i know the respect of the mock-up is strongly important, with me you can be sure you'll can play at the seven differences game between your mock-up and the final project, and find none.</p>
-					<br />
-					<p>Entrust me your project, some instructions and the mock-up, and 
-						you have the insurance i will make this with serious, rigor and my bigger smile 😃</p>
-				</div> */}
 
 				<div className="cv__content__experiences">
 					<h2>Experiences</h2>
@@ -151,7 +138,7 @@ const CV:React.FC = () => {
 				</div>
 
 
-				<div className={`cv__content__download ${inAlien ? "alienFont" : "humanFont"}`}>
+				<div className={`cv__content__download ${inAlien ? "alienFont" : "humanFont"}`} data-testid="downloadButton" >
 					<div className="cv__content__download-button" 
 						 onClick={showLanguages} >Download CV
 					</div>

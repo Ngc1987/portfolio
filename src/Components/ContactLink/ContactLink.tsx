@@ -11,21 +11,26 @@ type Props = {
 
 const ContactLink:React.FC<Props> = ({type}) => {
 	return (
-		<div className="contactLink" >
+		<div className="contactLink" data-testid="contactLink" >
 			{
 				type === "linkedin" ? 
-						<a href="https://www.linkedin.com/in/thomas-semeria-a5217aa1/">
+						<a href="https://www.linkedin.com/in/thomas-semeria-a5217aa1/" 
+							data-testid="linkedin" >
 							<SiLinkedin/>
 						</a>  : 
 				type === "github" ? 
-						<a href="https://github.com/Ngc1987">
+						<a href="https://github.com/Ngc1987" 
+							data-testid="github" >
 							<SiGithub/> 
 						</a> : 
 				type === "mail" ? 
-						<a href="mailto:tsemeri@gmail.com">
+						<a href="mailto:tsemeri@gmail.com" 
+							data-testid="mail" >
 							<MdAttachEmail/>
 						</a>  : 
-						<a href="tel:+33614382452">
+				type === "phone" &&
+						<a href="tel:+33614382452" 
+							data-testid="phone" >
 							<FaPhoneSquare/>
 						</a>		
 			}

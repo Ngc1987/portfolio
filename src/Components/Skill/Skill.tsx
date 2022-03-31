@@ -34,9 +34,9 @@ const Skill:React.FC<Props> = ({name}: Props) => {
 	
 	return (
 
-		<div>
+		<div className="skill" data-testid="skill" >
 			{
-				name === "html" ? <SiHtml5/> : 
+				name === "html" ? <SiHtml5 data-testid="skillHtml" /> : 
 				name === "css" ? <SiCss3/> : 
 				name === "javascript" ? <SiJavascript/> : 
 				name === "react" ? <SiReact/> : 

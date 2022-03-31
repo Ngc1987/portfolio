@@ -3,7 +3,7 @@ import "./Earth.scss"
 
 const Earth:React.FC = () => {
 	return (
-		<img id="earth" src={process.env.PUBLIC_URL + "assets/earth2.png"} alt="" />
+		<img id="earth" src={process.env.PUBLIC_URL + "assets/earth2.png"} alt="Earth draw"/>
 	)
 }
 

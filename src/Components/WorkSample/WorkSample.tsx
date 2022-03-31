@@ -8,7 +8,7 @@ import { WorkSampleProps } from '../../Datas/WorkSampleDatas';
 const WorkSample:React.FC<WorkSampleProps> = ({title, image, description, githubLink, liveDemoLink, inProgress}) => {
 	
 	return (
-		<article className="workSample">
+		<article className="workSample" data-testid="workSample">
 			<div className="workSample__title">
 				<h2>{title}</h2>
 			</div>

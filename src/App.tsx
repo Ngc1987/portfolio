@@ -29,11 +29,11 @@ function App() {
 	const setOpen = () => {
 		setIsOpen(!isOpen)
 	}
-	const handleOnClose = () => {
-		setIsOpen(false)
-	}
 	const onToggle = (toggled:boolean) => {
 		toggled ? setIsOpen(true) : setIsOpen(false)
+	}
+	const handleOnClose = () => {
+		setIsOpen(false)
 	}
 
 	// State to show or no the title

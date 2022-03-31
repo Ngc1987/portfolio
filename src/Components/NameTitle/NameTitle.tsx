@@ -31,7 +31,7 @@ const NameTitle:React.FC<Props> = ({className}) => {
 	
 	return (
 		
-		<div className={`title ${className}`} tabIndex={0} >
+		<div className={`title ${className}`} tabIndex={0} data-testid="nameTitle" >
 			<svg className="title__svg" width="444" height="192" viewBox="0 0 444 192" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<mask id="path-1-inside-1_2_5" fill="white">
 				<path ref={pathRef} d="M59.76 0L57.06 15H40.56L34.74 48H16.74L22.56 15H6.05999L8.75999 0H59.76Z"/>

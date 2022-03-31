@@ -7,7 +7,7 @@ const MobileTitle:React.FC = () => {
 	const pathName = usePathname();
 
 	return (
-		<h1 className={`mobileTitle ${pathName === "/" ? "blue" :
+		<h1 data-testid="mobileTitle" className={`mobileTitle ${pathName === "/" ? "blue" :
 									pathName === "/mywork" ? "purple" :
 									pathName === "/cv" ? "red" :
 									pathName === "/about" ? "orange" : "green"}`} >

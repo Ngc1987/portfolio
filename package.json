@@ -54,12 +54,21 @@
 	},
 	"devDependencies": {
 		"@babel/preset-typescript": "^7.16.7",
+		"@types/enzyme": "^3.10.11",
 		"@types/react-burger-menu": "^2.8.3",
 		"@types/react-router-dom": "^5.3.3",
+		"@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
 		"better-docs": "^2.7.2",
+		"enzyme": "^3.11.0",
 		"eslint-plugin-tsdoc": "^0.2.14",
 		"hamburger-react": "^2.4.1",
 		"jsdoc": "^3.6.10",
 		"typedoc": "^0.22.13"
+	},
+	"jest": {
+		"unmockedModulePathPatterns": [
+			"node_modules/react/",
+			"node_modules/enzyme/"
+		]
 	}
 }

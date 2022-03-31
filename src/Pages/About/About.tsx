@@ -13,7 +13,8 @@ const About:React.FC = () => {
 		<MouseParallaxContainer className="about">
 			<MouseParallaxChild
 					 factorX={0.02}
-					 factorY={0.02} 
+					 factorY={0.02}
+					//  data-testid="uhf" 
 					 className="about__description child1"
 			>
 				<h2>Here i'll go to talk a little of me.</h2>

@@ -27,4 +27,5 @@
 	"setupFilesAfterEnv": [
 		"./src/setupTests.js"
 	],
+	"allowTestingFrameworkSetupHook": ["BeforeEach", "AfterEach"]
 }

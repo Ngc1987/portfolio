@@ -6,6 +6,8 @@ module.exports = {
 	moduleDirectories: ['<rootDir>/node_modules', '<rootDir>/src'],
 	"setupFilesAfterEnv": [
 		"<rootDir>/src/setupTests.ts"
-	]// this is the KEY
+	],
+	allowTestingFrameworkSetupHook: ["BeforeEach", "AfterEach"]
+	// this is the KEY
 	// note it should be in the top level of the exported object.
 };

@@ -7,7 +7,7 @@ type Props = {
 
 const Loader:React.FC<Props> = ({className}) => {
   return (
-	<div className={className} >
+	<div className={className} data-testid="loader" >
 		<div className={`${className}__ring`}>
 			
 		</div>

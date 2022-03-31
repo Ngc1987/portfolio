@@ -3,7 +3,7 @@ import "./Stars.scss";
 
 const Stars:React.FC = () => {
 	return (
-		<div className="stars" >
+		<div className="stars" data-testid="stars">
 			<div className="star"></div>
 			<div className="star"></div>
 			<div className="star"></div>

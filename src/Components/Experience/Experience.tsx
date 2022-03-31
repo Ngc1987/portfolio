@@ -15,15 +15,18 @@ type Props = {
 
 const Experience:React.FC<Props> = ({employer, job, dates, index, showExp}) => {
 
-	// console.log(index)
-
 	return (
-		<article className={`${index < 3 ? "experience showExp" : index > 2 && showExp ? "experience showExp" : "experience hideExp"}`} >
+		<article className=
+				{`${index < 3 ? "experience showExp" : 
+					index > 2 && showExp ? "experience showExp" :
+					"experience hideExp"}`}
+					data-testid="experience" 
+		>
 			<div className="experience__header">
 				<div className="experience__header-logo">
 					{
 						employer === "Feu Vert" ? <FaCar/> :
-						employer === "Myself" ? <FaLaptopCode/> :
+						employer === "Myself" ? <FaLaptopCode data-testid="myselfJob" /> :
 						employer === "Open Class Rooms" ? <FaLaptopCode/> :
 						employer === "McDonald's" ? <SiMcdonalds/> :
 													<GiChimney/>

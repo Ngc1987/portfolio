@@ -6,11 +6,11 @@ type Props = {
 	changeTextLanguage: () => void;
 };
 
-export const CheckBox:React.FC<Props> = ({inAlien, changeTextLanguage}) => {
+const CheckBox:React.FC<Props> = ({inAlien, changeTextLanguage}) => {
 
 	return (
 		
-		<label className="checkbox" htmlFor="checkbox">
+		<label className="checkbox" htmlFor="checkbox" data-testid="checkbox">
 			<input id="checkbox" 
 					type="checkbox" 
 					className="checkbox__input" 
@@ -22,3 +22,5 @@ export const CheckBox:React.FC<Props> = ({inAlien, changeTextLanguage}) => {
 		</label>
 	)
 };
+
+export default CheckBox;

@@ -30,7 +30,6 @@ const DesktopNav:React.FC = () => {
 	function customizeMarker(e: any) {
 		marker.current.style.left = e.target.offsetLeft + "px";
 		marker.current.style.width = e.target.clientWidth + "px";
-
 	}
 
 	// Setting the color of the ball according to the url path
@@ -65,12 +64,37 @@ const DesktopNav:React.FC = () => {
 	
 	return (
 
-		<nav className="desktopNav" >
-			<Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/">Home</Link> 
-			<Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/mywork">My work</Link>
-			<Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/cv">CV</Link>
-			<Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/about">About me</Link>
-			<Link onMouseMove={(e) => customizeMarker(e)} className="desktopNav__link" to="/contact">Contact</Link>
+		<nav className="desktopNav" data-testid="desktopNav" >
+			<Link onMouseMove={(e) => customizeMarker(e)} 
+					className="desktopNav__link" 
+					to="/"
+					data-testid="desktopNavLink" >
+					Home
+			</Link> 
+			<Link onMouseMove={(e) => customizeMarker(e)} 
+					className="desktopNav__link" 
+					to="/mywork"
+					data-testid="desktopNavLink" >
+					My work
+			</Link>
+			<Link onMouseMove={(e) => customizeMarker(e)} 
+					className="desktopNav__link" 
+					to="/cv"
+					data-testid="desktopNavLink" >
+					CV
+			</Link>
+			<Link onMouseMove={(e) => customizeMarker(e)} 
+					className="desktopNav__link" 
+					to="/about"
+					data-testid="desktopNavLink" >
+					About me
+			</Link>
+			<Link onMouseMove={(e) => customizeMarker(e)} 
+					className="desktopNav__link" 
+					to="/contact"
+					data-testid="desktopNavLink" >
+					Contact
+			</Link>
 		
 			<div id="marker" ref={marker}>
 				<div className="ball" ref={ball}></div>

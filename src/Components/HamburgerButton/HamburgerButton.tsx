@@ -2,9 +2,9 @@ import React from "react";
 import { Sling as Hamburger }  from "hamburger-react";
 
 type Props = {
-	toggled: boolean;
-	toggle: () => void;
-	onToggle: (toggled: boolean) => void;
+	toggled?: boolean;
+	toggle?: () => void;
+	onToggle?: (toggled: boolean) => void;
 }
 
 const HamburgerButton:React.FC<Props> = ({toggled, toggle, onToggle}) => {
@@ -22,7 +22,8 @@ const HamburgerButton:React.FC<Props> = ({toggled, toggle, onToggle}) => {
 				size={36} 
 				duration={1} 
 				color={!navigateur.includes("Chrome") ?  "#5da6ff" :  "white"}
-				label="Show menu"
+				label={toggled ? "Hide menu" : "Show menu"}
+				data-testid="hamburgerButton"
 				/>
 	)
 }

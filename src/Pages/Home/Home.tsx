@@ -3,7 +3,6 @@ import "./Home.scss";
 
 import Earth from '../../Components/Earth/Earth';
 import FlyingAlien from '../../Components/FlyingAlien/FlyingAlien';
-import StyledDiv from '../../Components/StyledDiv/StyledDiv';
 
 
 const Home:React.FC = () => {
@@ -35,9 +34,9 @@ const Home:React.FC = () => {
 				<div className="home__anim-alien">
 					<FlyingAlien />
 				</div>
-				<StyledDiv className="home__anim-hello">
+				<div className="home__anim-hello">
 					<p>Hello World !</p>
-				</StyledDiv>
+				</div>
 				<div className="home__anim-earth">
 					<Earth />
 				</div>
