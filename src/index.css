@@ -3,19 +3,6 @@
     src: url("./Fonts/nasalization-rg.otf");
 }
 @font-face {
-    font-family: "beyno";
-    src: url("./Fonts/BEYNO.ttf");
-}
-@font-face {
-    font-family: "ufo";
-    src: url("./Fonts/UFO\ NEST\ -\ Regluar.ttf");
-}
-@font-face {
-    font-family: "spaceAge";
-    src: url("./Fonts/space\ age.ttf");
-}
-
-@font-face {
     font-family: "klingon";
     src: url("./Fonts/klingon.ttf");
 }

@@ -19,6 +19,8 @@ const CV:React.FC = () => {
 	const [inAlien, setInAlien] = useState<boolean>(false);
 	// State for the text to show just below the skills samples
 	const [index, setIndex] = useState<number>(0);
+
+	console.log(index)
 	
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -87,6 +89,7 @@ const CV:React.FC = () => {
 						<Skill name="typescript" />
 						<Skill name="react" />
 						<Skill name="redux" />
+						<Skill name="jest" />
 						<Skill name="mongo" />
 						<Skill name="git" />
 						<Skill name="github" />

@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Skill.scss";
 
-import { SiTailwindcss, SiMongodb, SiHtml5, SiCss3, SiJavascript, SiReact, SiGithub, SiGit, SiTypescript, SiSass, SiWindowsterminal, SiRedux, SiW3C } from 'react-icons/si';
+import { SiTailwindcss, SiJest, SiMongodb, SiHtml5, SiCss3, SiJavascript, SiReact, SiGithub, SiGit, SiTypescript, SiSass, SiWindowsterminal, SiRedux, SiW3C } from 'react-icons/si';
 import { BiDevices } from 'react-icons/bi';
 
 type Props = {
@@ -49,6 +49,7 @@ const Skill:React.FC<Props> = ({name}: Props) => {
 				name === "responsive" ? <BiDevices/> : 
 				name === "tailwind" ? <SiTailwindcss/> : 
 				name === "mongo" ? <SiMongodb/> : 
+				name === "jest" ? <SiJest/> : 
 									<SiW3C/>
 			}
 			<p>
@@ -66,6 +67,7 @@ const Skill:React.FC<Props> = ({name}: Props) => {
 				name === "mongo" ? "MongoDb" : 
 				name === "tailwind" ? "Tailwind CSS" : 
 				name === "responsive" ? "Responsives websites" : 
+				name === "jest" ? "Jest" : 
 									"Web accessibility"
 			}
 			</p>
