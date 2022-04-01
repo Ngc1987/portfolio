@@ -96,17 +96,17 @@ const ContactForm:React.FC = () => {
 					message
 				};
 	
-				// await emailjs.send(
-				// 	"service_2if4nkm",
-				// 	"template_3z23f6p",
-				// 	templateParams,
-				// 	"user_Ch8zKqPzcFNo8oW0WqNgg"
-				// 	// process.env.REACT_APP_USER_ID
-				// ).then(function (response) {
-				// 	console.log('SUCCESS!', response.status, response.text);
-				// }, function (error) {
-				// 	console.log('FAILED...', error);
-				// });
+				await emailjs.send(
+					"service_2if4nkm",
+					"template_3z23f6p",
+					templateParams,
+					"user_Ch8zKqPzcFNo8oW0WqNgg"
+					// process.env.REACT_APP_USER_ID
+				).then(function (response) {
+					console.log('SUCCESS!', response.status, response.text);
+				}, function (error) {
+					console.log('FAILED...', error);
+				});
 	
 				setShowErrorMessages(false);
 				// Reset contact form fields after submission
@@ -249,6 +249,8 @@ const ContactForm:React.FC = () => {
 						data-testid="formInput"
 						placeholder='First Name'
 						required
+						aria-required={true}
+						aria-invalid={errorMessages.firstName ? true : false}
 						onInput={(e) => onInputChange(e)}
 						{...register('firstName', {})}
 					/>
@@ -263,6 +265,8 @@ const ContactForm:React.FC = () => {
 						data-testid="formInput"
 						placeholder='Last Name'
 						required
+						aria-required={true}
+						aria-invalid={errorMessages.lastName ? true : false}
 						maxLength={30}
 						onInput={(e) => onInputChange(e)}
 						{...register('lastName', {})} 
@@ -277,6 +281,8 @@ const ContactForm:React.FC = () => {
 					data-testid="formInput"
 						placeholder='E-mail'
 						required
+						aria-required={true}
+						aria-invalid={errorMessages.email ? true : false}
 						onInput={(e) => onInputChange(e)}
 						{...register('email', {})} 
 					/>
@@ -291,6 +297,8 @@ const ContactForm:React.FC = () => {
 						data-testid="formInput"
 						placeholder='Number Phone'
 						required
+						aria-required={true}
+						aria-invalid={errorMessages.numberPhone ? true : false}
 						onInput={(e) => onInputChange(e)}
 						{...register('numberPhone', {})} 
 					/>
@@ -307,6 +315,8 @@ const ContactForm:React.FC = () => {
 						rows={5}
 						placeholder='Message'
 						required
+						aria-required={true}
+						aria-invalid={errorMessages.message ? true : false}
 						onInput={(e) => onInputChange(e)}
 						{...register('message', {})}
 					/>

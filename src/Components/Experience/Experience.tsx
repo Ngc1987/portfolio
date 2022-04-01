@@ -32,11 +32,11 @@ const Experience:React.FC<Props> = ({employer, job, dates, index, showExp}) => {
 													<GiChimney/>
 					}
 				</div>
-				<div className="experience__header-employer">{employer}</div>
+				<div className="experience__header-employer" tabIndex={0}>{employer}</div>
 			</div>
 			<div className="experience__content">
-				<div className="experience__content-job">{job}</div>
-				<div className="experience__content-date">{dates}</div>
+				<div className="experience__content-job" tabIndex={0}>{job}</div>
+				<div className="experience__content-date" tabIndex={0}>{dates}</div>
 			</div>
 		</article>
 	)

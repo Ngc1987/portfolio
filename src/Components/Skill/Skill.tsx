@@ -34,7 +34,12 @@ const Skill:React.FC<Props> = ({name}: Props) => {
 	
 	return (
 
-		<div className="skill" data-testid="skill" >
+		<div className="skill" 
+			data-testid="skill" 
+			aria-hidden="true" 
+			title={`${name} logo`}
+			 tabIndex={0} >
+
 			{
 				name === "html" ? <SiHtml5 data-testid="skillHtml" /> : 
 				name === "css" ? <SiCss3/> : 

@@ -8,9 +8,16 @@ type Props = {
 
 const CheckBox:React.FC<Props> = ({inAlien, changeTextLanguage}) => {
 
+	const ariaChangeLanguage = (e:any) => {
+		// console.log(e.charCode)
+		if(e.charCode === 13) {
+			changeTextLanguage();
+		}
+	}
+
 	return (
 		
-		<label className="checkbox" htmlFor="checkbox" data-testid="checkbox">
+		<label onKeyPress={ariaChangeLanguage} tabIndex={0} className={`checkbox ${inAlien ? "yellowLabel" : "blueLabel"}`} htmlFor="checkbox" data-testid="checkbox">
 			<input id="checkbox" 
 					type="checkbox" 
 					className="checkbox__input" 

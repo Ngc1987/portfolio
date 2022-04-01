@@ -1,46 +1,78 @@
-# Getting Started with Create React App
+<p align="center">
+	<a href="https://app.netlify.com/sites/tomsportfolio/deploys" >
+		<img src="https://api.netlify.com/api/v1/badges/c3af44f3-75be-4a1e-9a38-c5d9c634b7a0/deploy-status"/>
+	</a>
+	</p>
+<p align="center">
+	<a href="https://github.com/Ngc1987" >
+		<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/>
+	</a>
+	<a href="https://reactjs.org/">
+		<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+	</a>
+	<a href="https://www.typescriptlang.org/">
+		<img src="https://img.shields.io/badge/Typescript-5da6ff?style=for-the-badge&logo=typescript&logoColor=white"/>
+	</a>
+	<a href="https://reactrouter.com/">
+		<img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white"/>
+	</a>
+	<a href="https://reactjs.org/docs/introducing-jsx.html">
+		<img src="https://img.shields.io/badge/JSX-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+	</a>
+	<a href="https://reactjs.org/docs/introducing-jsx.html">
+		<img src="https://img.shields.io/badge/Jest-edf0f3?style=for-the-badge&logo=jest&logoColor=6ec444"/>
+	</a>
+	<a href="https://sass-lang.com/">
+		<img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white"/>
+	</a>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<h1 align="center">My portfolio</h1>
 
-In the project directory, you can run:
 
-### `npm start`
+<p align="center">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+</p>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![img](https://i.imgur.com/PJsoJhx.png)
+<p align="center">
+<a href="https://tomsportfolio.netlify.app/">🌍 Live démo
+</a>
+</p>
 
-### `npm test`
+## 1. Author
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Thomas Semeria
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 2. Languages
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Typescript
+- JSX
+- SCSS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 3. Project
+This is my personal portfolio. Click on the Demo link to visit it. You can find here all my old and actual projects.
 
-### `npm run eject`
+I choose a space theme for it, just because i love this ! 👽 🌎
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+For this project i use:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [React](https://reactjs.org/)
+- [React Router Dom](https://v5.reactrouter.com/web/guides/quick-start)
+- [React-burger-menu](https://www.npmjs.com/package/react-burger-menu) for the beautiful mobile menu.
+- [React-hook-form](https://sass-lang.com/) to have a basic form with a good code organization.
+- [React-toastify](https://www.npmjs.com/package/react-toastify) to have a beautiful modale to confirm the user he send a message.
+- [Emailjs-com](https://www.emailjs.com/) to send the user message to the client mail.
+- [React-icons](https://react-icons.github.io/react-icons/) to have beautiful icons
+- [Greensock](https://greensock.com/) to make some animations and transitions.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### 4 Launching the project
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Fork this repository
+- Clone it on your computer.
+- Then write on the terminal `npm install` to install all the dependencies
+- You can now do an `npm start` and the App is now hosted on http://localhost:3000

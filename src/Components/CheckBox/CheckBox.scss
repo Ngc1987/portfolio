@@ -2,6 +2,7 @@
 	position: relative;
 	margin: 5px 0;
 	cursor: pointer;
+	transition: all 0.5s ease;
 	
 	&__input {
 		appearance: none;
@@ -73,4 +74,11 @@
 			;
 		}
 	}
+}
+
+.blueLabel {
+	filter: drop-shadow(0px 0px 5px #00aeff);
+}
+.yellowLabel {
+	filter: drop-shadow(0px 0px 5px #ffd000);
 }

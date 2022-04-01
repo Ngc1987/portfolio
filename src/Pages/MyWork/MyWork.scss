@@ -10,8 +10,11 @@
 		margin-top: 200px;
 		width: 80%;
 		color: #d1aeee;
-		filter: drop-shadow(0px 0px 10px #b65dff);
 		font-size: 1.8rem;
+		
+		h1 {
+			filter: drop-shadow(0px 0px 10px #b65dff);
+		}
 	}
 
 	&__samples {

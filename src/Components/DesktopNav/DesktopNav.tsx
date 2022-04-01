@@ -64,7 +64,7 @@ const DesktopNav:React.FC = () => {
 	
 	return (
 
-		<nav className="desktopNav" data-testid="desktopNav" >
+		<nav className="desktopNav" role="navigation" data-testid="desktopNav" aria-label="Desktop navigation menu">
 			<Link onMouseMove={(e) => customizeMarker(e)} 
 					className="desktopNav__link" 
 					to="/"

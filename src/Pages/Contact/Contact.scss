@@ -11,8 +11,11 @@
 		margin-top: 200px;
 		width: 80%;
 		color: #83cc5f;
-		filter: drop-shadow(0px 0px 10px #6ec444);
 		font-size: 1.8rem;
+		
+		h1 {
+			filter: drop-shadow(0px 0px 10px #6ec444);
+		}
 	}
 
 	&__links {
@@ -57,3 +60,4 @@
 		}
 	}
 }
+

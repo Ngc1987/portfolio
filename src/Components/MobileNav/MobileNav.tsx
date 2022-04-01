@@ -18,8 +18,8 @@ const MobileNav:React.FC<Props> = ({isOpen, setOpen, onToggle, handleOnClose}) =
 	// console.log(navigateur)
 
 	return (
-		<>
-			<div className="mobileNav__button">
+		<nav role="navigation" aria-label="Mobile navigation menu" >
+			<div className="mobileNav__button" aria-controls="toggleNavbar" aria-expanded={isOpen ? "true" : "false"} aria-label="Toggle navigation">
 					<HamburgerButton toggled={isOpen} toggle={setOpen} onToggle={onToggle}/>
 			</div>
 
@@ -30,6 +30,7 @@ const MobileNav:React.FC<Props> = ({isOpen, setOpen, onToggle, handleOnClose}) =
 				isOpen={isOpen}
 				overlayClassName={"mobileNav__menu-overlay"}
 				onClose={ handleOnClose }
+				id="toggleNavbar"
 				>
 
 				<h2 style={!navigateur.includes("Chrome") ? {color: "black"} : {color: "white"}} >Navigate to</h2>
@@ -64,7 +65,7 @@ const MobileNav:React.FC<Props> = ({isOpen, setOpen, onToggle, handleOnClose}) =
 					Contact
 				</Link>
 			</Menu>
-		</>
+		</nav>
 	)
 }
 

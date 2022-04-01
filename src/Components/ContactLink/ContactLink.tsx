@@ -11,7 +11,7 @@ type Props = {
 
 const ContactLink:React.FC<Props> = ({type}) => {
 	return (
-		<div className="contactLink" data-testid="contactLink" >
+		<div className="contactLink" data-testid="contactLink" tabIndex={0} aria-label={`Link to Thomas's ${type}`} >
 			{
 				type === "linkedin" ? 
 						<a href="https://www.linkedin.com/in/thomas-semeria-a5217aa1/" 

@@ -6,15 +6,15 @@ import WorkSample from "../../Components/WorkSample/WorkSample";
 const MyWork:React.FC = () => {
 
 	return (
-		<section className="mywork" >
-			<div className="mywork__description">
-				<h2>Here is some of my work.</h2>
+		<main className="mywork" >
+			<section className="mywork__description">
+				<h1 tabIndex={0}>Here is some of my work.</h1>
 				<br />
-				<p>Click on "Live demo" to visit the website, or click on the GitHub logo to see my repo on GitHub.</p>
+				<p tabIndex={0}>Click on "Live demo" to visit the website, or click on the GitHub logo to see my repo on GitHub.</p>
 				<br />
-				<p>If you have some questions or just want to contact me, click on the "Contact" button 👽</p>
-			</div>
-			<div className="mywork__samples">
+				<p tabIndex={0}>If you have some questions or just want to contact me, click on the "Contact" button 👽</p>
+			</section>
+			<section className="mywork__samples">
 				{WorkSampleDatas.map((obj, index) => {
 					return (<WorkSample title={obj.title}
 										image={obj.image}
@@ -24,8 +24,8 @@ const MyWork:React.FC = () => {
 										key={index}
 										inProgress={obj.inProgress} />)
 				})}
-			</div>
-		</section>
+			</section>
+		</main>
 	)
 }
 

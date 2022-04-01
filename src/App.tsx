@@ -47,7 +47,7 @@ function App() {
 		setTimeout(() => {
 			setShowTitle(false);
 			setShowContent(true)
-		}, 700)
+		}, 7000)
 	})
 
   	return (

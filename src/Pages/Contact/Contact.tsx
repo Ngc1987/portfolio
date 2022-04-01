@@ -8,25 +8,25 @@ import ContactForm from "../../Components/ContactForm/ContactForm";
 const Contact:React.FC = () => {
 
 	return (
-		<section className="contact" >
-			<div className="contact__description">
-				<h2>
+		<main className="contact" >
+			<section className="contact__description">
+				<h1 tabIndex={0}>
 					Here are the links through which you can follow or contact me.
-				</h2>
+				</h1>
 				<br />
-				<p>You can also complete the below form.</p>
-			</div>
-			<div className="contact__links">
+				<p tabIndex={0}>You can also complete the below form.</p>
+			</section>
+			<section className="contact__links">
 				<ContactLink type="linkedin" />
 				<ContactLink type="mail" />
 				<ContactLink type="phone" />
 				<ContactLink type="github" />
-			</div>
-			<div className="contact__form">
+			</section>
+			<section className="contact__form">
 				<ContactForm/>
-			</div>
+			</section>
 
-		</section>
+		</main>
 	)
 }
 

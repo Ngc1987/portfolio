@@ -9,41 +9,41 @@ const Home:React.FC = () => {
 
 	return (
 		
-		<section className="home" >
+		<main className="home" >
 
-			<div className="home__description">
-				<h2>Hi everyone, i'm 
+			<section className="home__description">
+				<h1 tabIndex={0} >Hi everyone, i'm 
 					<em className="alienFont" >mwncbzudz grge </em>
 					<span></span> and i come from 
 					<em className="alienFont" >sfdhbjbty</em>
-				</h2>
+				</h1>
 				<br />
 				<br />
-				<p>In your planet, you can call me Thomas Semeria.</p>
+				<p tabIndex={0}>In your planet, you can call me Thomas Semeria.</p>
 				<br />
-				<p>I'm a front-end developer, and open to work on Earth.</p>
+				<p tabIndex={0}>I'm a front-end developer, and open to work on Earth.</p>
 				<br />
-				<p>Don't worry, my flying saucer is working with antimatter and not Earth petrol, so it's not a problem for me to fly to your beautiful planet.</p>
+				<p tabIndex={0}>Don't worry, my flying saucer is working with antimatter and not Earth petrol, so it's not a problem for me to fly to your beautiful planet.</p>
 				<br />
-				<p>And if you need me really fast, i can come with my pocket teleporter.</p>
+				<p tabIndex={0}>And if you need me really fast, i can come with my pocket teleporter.</p>
 				<br />
-				<p>Visit the other pages of my portfolio to see some work of me, to know me a little more, to check my experience or to contact me.</p>
-			</div>
+				<p tabIndex={0}>Visit the other pages of my portfolio to see some work of me, to know me a little more, to check my experience or to contact me.</p>
+			</section>
 
-			<div className="home__anim">
-				<div className="home__anim-alien">
+			<section className="home__anim">
+				<div className="home__anim-alien" tabIndex={0}>
 					<FlyingAlien />
 				</div>
-				<div className="home__anim-hello">
+				<div className="home__anim-hello" tabIndex={0}>
 					<p>Hello World !</p>
 				</div>
-				<div className="home__anim-earth">
+				<div className="home__anim-earth" tabIndex={0}>
 					<Earth />
 				</div>
 
-			</div>
+			</section>
 			
-		</section>
+		</main>
 	)
 }
 
