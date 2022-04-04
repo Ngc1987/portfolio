@@ -1,5 +1,8 @@
 import React from 'react';
 import "./WorkSample.scss";
+
+import Loader from '../Loader/Loader';
+
 import { ImGithub } from 'react-icons/im';
 import { GiEarthAmerica } from 'react-icons/gi';
 import { WorkSampleProps } from '../../Datas/WorkSampleDatas';
@@ -25,7 +28,9 @@ const WorkSample:React.FC<WorkSampleProps> = ({title, image, description, github
 					<p className="inProgress__text">In progress...</p>
 				</>
 					:
-					<img src={image} alt={`Sample pic of ${title} website`} tabIndex={0} />
+					<React.Suspense fallback={<Loader className="smallPic__loader" />}>
+						<img src={image} alt={`Sample pic of ${title} website`} tabIndex={0} />
+					</React.Suspense>
 				}
 			</div>
 			<div className="workSample__description">

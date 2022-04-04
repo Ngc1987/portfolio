@@ -13,7 +13,7 @@ const CV:React.FC = () => {
 
 	// State for the download menu
 	const [isOpen, setIsOpen] = useState<boolean>(false);
-	// State for the download menu
+	// State for the experience menu
 	const [isExperienceOpen, setIsExperienceOpen] = useState<boolean>(false);
 	// State for the selected language
 	const [inAlien, setInAlien] = useState<boolean>(false);
@@ -23,7 +23,7 @@ const CV:React.FC = () => {
 	console.log(index)
 	
 	useEffect(() => {
-		const interval = setInterval(() => {
+		const interval: NodeJS.Timer = setInterval(() => {
 			index === 4 ? setIndex(0) : setIndex(index + 1);
 		}, 8000)
 		
@@ -42,8 +42,11 @@ const CV:React.FC = () => {
 		}
 	}
 	// Change the state for the download menu, who show the two different languages to download the cv
-	const toggleShowExperiences = () => {
+	const toggleShowExperiences = (e:any) => {
 		setIsExperienceOpen(!isExperienceOpen)
+		if(e.charCode === 13) {
+			setIsExperienceOpen(!isExperienceOpen)
+		}
 	}
 	// Change the state to show the content in earth or klingon language
 	const changeTextLanguage = () => {
@@ -139,6 +142,8 @@ const CV:React.FC = () => {
 							<p>If you want you can see my olders experiences by clicking the below arrow, not from the dev world but it's experiences:</p>
 							<IoIosArrowDown 
 									onClick={toggleShowExperiences}
+									onKeyPress={toggleShowExperiences}
+									tabIndex={0}
 									className={`${isExperienceOpen ? "openExp" : "closeExp"}`} />
 						</div>
 				</section>
@@ -152,8 +157,8 @@ const CV:React.FC = () => {
 					</div>
 					
 					<div className={`cv__content__download-language ${isOpen ? "showLanguage" : "hideLanguage"}`}>
-						<div onClick={showLanguages} tabIndex={0} onKeyPress={showLanguages} >In english</div>
-						<div onClick={showLanguages} tabIndex={0} onKeyPress={showLanguages} >In french</div>
+						<a href={process.env.PUBLIC_URL + "assets/Cv/CvThomasFR.pdf"} download onClick={showLanguages} tabIndex={0} onKeyPress={showLanguages} >In french</a>
+						<a href={process.env.PUBLIC_URL + "assets/Cv/CvThomasEN.pdf"} download onClick={showLanguages} tabIndex={0} onKeyPress={showLanguages} >In english</a>
 					</div>
 				</div>
 			</section>

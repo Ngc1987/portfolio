@@ -148,6 +148,26 @@ const About:React.FC = () => {
 				</MouseParallaxChild>
 
 				<MouseParallaxChild
+					 factorX={0.06}
+					 factorY={0.06} 
+					 className="about__description child3">
+
+				<p className="about__description-text2" tabIndex={0}>
+					I also love music, video games, take care of animals, just some simples things of the life 🌳
+				</p>
+			</MouseParallaxChild>
+				<MouseParallaxChild
+					 factorX={0.04}
+					 factorY={0.04} 
+					 className="about__description child3">
+
+				<p className="about__description-text" tabIndex={0}>
+					If you have any questions about my way of life, want to know more about me,
+					<br /> feel free to contact me by clicking the navigation menu contact button 👽
+				</p>
+			</MouseParallaxChild>
+
+				<MouseParallaxChild
 							factorX={0.10}
 							factorY={0.10}
 							className="planet1" >
@@ -156,10 +176,18 @@ const About:React.FC = () => {
 							/>
 			</MouseParallaxChild>
 				<MouseParallaxChild
-							factorX={0.20}
-							factorY={0.15}
+							factorX={0.25}
+							factorY={0.20}
 							className="planet2" >
 						<img src={process.env.PUBLIC_URL + "/assets/redPlanet.webp"} 
+							alt="Full water planet"
+							/>
+			</MouseParallaxChild>
+				<MouseParallaxChild
+							factorX={0.35}
+							factorY={0.25}
+							className="planet3" >
+						<img src={process.env.PUBLIC_URL + "/assets/planet2.webp"} 
 							alt="Full water planet"
 							/>
 			</MouseParallaxChild>
@@ -203,7 +231,9 @@ const About:React.FC = () => {
 				<p className="smallAbout__description text4" ref={addToRefs} tabIndex={0} >In my daily life, i like doing some sports and learning some stuffs about sciences and technologies,
 				<br /> 
 				travels on space and time, and looking some big stars explodes.</p>
-				<p className="smallAbout__description text3" ref={addToRefs} tabIndex={0} >I also love music, video games, take care of animals, just the simples things of the life 🌳</p>
+				<p className="smallAbout__description text3" ref={addToRefs} tabIndex={0} >I also love music, video games, take care of animals, just some simples things of the life 🌳</p>
+				<p className="smallAbout__description text2" ref={addToRefs} tabIndex={0} >If you have any questions about my way of life, want to know more about me,
+					<br /> feel free to contact me by clicking the navigation menu contact button 👽</p>
 			</main>
 	)
 }
