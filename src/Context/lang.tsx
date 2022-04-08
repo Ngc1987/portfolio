@@ -42,7 +42,7 @@ const langreducer = (state: LangStateType, action: SetLanguageAction): LangState
 
 const localStorageLang = localStorage.getItem("language");
 const initialState = {
-	language: localStorageLang ? localStorageLang : "en"
+	language: localStorageLang ? localStorageLang : "fr"
 }
 
 export const LangContext = createContext({} as ContextProps);
@@ -67,7 +67,7 @@ const LangState: FC<LangStateProps> = ({children}) => {
 		}else if(language === "fr") {
 			langData = fr;
 		}else if(language !== "en" && language !== "fr") {
-			langData = en;
+			langData = fr;
 		}
 
 		return langData[key]
