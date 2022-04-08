@@ -20,8 +20,12 @@ type Errors = {
   message: string | null;
 }
 
+type ContactFormProps = {
+	translate: (key: string) => void;
+}
 
-const ContactForm:React.FC = () => {
+
+const ContactForm:React.FC<ContactFormProps> = ({translate}) => {
 
 	// Initialize emailJs 
 	init("user_Ch8zKqPzcFNo8oW0WqNgg");
@@ -247,7 +251,7 @@ const ContactForm:React.FC = () => {
 					<input type="text"
 						id="firstName"
 						data-testid="formInput"
-						placeholder='First Name'
+						// placeholder={translate("contactLabel1")}
 						required
 						aria-required={true}
 						aria-invalid={errorMessages.firstName ? true : false}
@@ -255,7 +259,7 @@ const ContactForm:React.FC = () => {
 						{...register('firstName', {})}
 					/>
 					<div ref={firstNameLight} className="inputBox__light"></div>
-					<label htmlFor="firstName">First Name</label>
+					<label htmlFor="firstName">{translate("contactLabel1")} </label>
 				</div>
 				{showErrorMessages && <span className='form__errorMsg'>{errorMessages.firstName}</span>}
 				
@@ -263,7 +267,7 @@ const ContactForm:React.FC = () => {
 					<input type="text"
 						id="lastName"
 						data-testid="formInput"
-						placeholder='Last Name'
+						// placeholder='Last Name'
 						required
 						aria-required={true}
 						aria-invalid={errorMessages.lastName ? true : false}
@@ -272,14 +276,14 @@ const ContactForm:React.FC = () => {
 						{...register('lastName', {})} 
 					/>
 					<div ref={lastNameLight} className="inputBox__light"></div>
-					<label htmlFor="lastName">Last Name</label>
+					<label htmlFor="lastName">{translate("contactLabel2")} </label>
 				</div>
 				{showErrorMessages && <span className='form__errorMsg'>{errorMessages.lastName}</span>}
 
 				<div className="inputBox" >
 					<input type="email"
 					data-testid="formInput"
-						placeholder='E-mail'
+						// placeholder='E-mail'
 						required
 						aria-required={true}
 						aria-invalid={errorMessages.email ? true : false}
@@ -287,7 +291,7 @@ const ContactForm:React.FC = () => {
 						{...register('email', {})} 
 					/>
 					<div ref={emailLight} className="inputBox__light"></div>
-					<label htmlFor="email" id="email">E-mail</label>
+					<label htmlFor="email" id="email">{translate("contactLabel3")} </label>
 				</div>
 				{showErrorMessages && <span className='form__errorMsg'>{errorMessages.email}</span>}
 
@@ -295,7 +299,7 @@ const ContactForm:React.FC = () => {
 					<input type="text"
 						id="numberPhone"
 						data-testid="formInput"
-						placeholder='Number Phone'
+						// placeholder='Number Phone'
 						required
 						aria-required={true}
 						aria-invalid={errorMessages.numberPhone ? true : false}
@@ -303,7 +307,7 @@ const ContactForm:React.FC = () => {
 						{...register('numberPhone', {})} 
 					/>
 					<div ref={numberPhoneLight} className="inputBox__light"></div>
-					<label htmlFor="numberPhone">Number Phone</label>
+					<label htmlFor="numberPhone">{translate("contactLabel4")} </label>
 				</div>
 				{showErrorMessages && <span className='form__errorMsg'>{errorMessages.numberPhone}</span>}
 
@@ -313,7 +317,7 @@ const ContactForm:React.FC = () => {
 						id="message"
 						data-testid="formInput"
 						rows={5}
-						placeholder='Message'
+						// placeholder='Message'
 						required
 						aria-required={true}
 						aria-invalid={errorMessages.message ? true : false}
@@ -321,11 +325,11 @@ const ContactForm:React.FC = () => {
 						{...register('message', {})}
 					/>
 					<div ref={messageLight} className="inputBox__light"></div>
-					<label htmlFor="message">Message</label>
+					<label htmlFor="message">{translate("contactLabel5")} </label>
 				</div>
 				{showErrorMessages && <span className='form__errorMsg'>{errorMessages.message}</span>}
 
-				<button type='submit' >Send</button>
+				<button type='submit' >{translate("contactButton")} </button>
 
 			</form>
 			<ToastContainer />

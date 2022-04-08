@@ -4,14 +4,15 @@ import HamburgerButton from '../HamburgerButton/HamburgerButton';
 import { slide as Menu } from 'react-burger-menu';
 import { Link } from 'react-router-dom';
 
-export type Props = {
+export type MobileNavProps = {
 	isOpen: boolean;
 	setOpen: () => void;
 	onToggle: (toggled: boolean) => void;
 	handleOnClose: () => void;
+	translate: (key: string) => void;
 }
 
-const MobileNav:React.FC<Props> = ({isOpen, setOpen, onToggle, handleOnClose}) => {
+const MobileNav:React.FC<MobileNavProps> = ({isOpen, setOpen, onToggle, handleOnClose, translate}) => {
 
 	// Checking the browser to set a different background color to the mobile menu (because the backdrop-filter property doesn't work on mozilla)
 	const navigateur = navigator.userAgent;
@@ -33,37 +34,32 @@ const MobileNav:React.FC<Props> = ({isOpen, setOpen, onToggle, handleOnClose}) =
 				id="toggleNavbar"
 				>
 
-				<h2 style={!navigateur.includes("Chrome") ? {color: "black"} : {color: "white"}} >Navigate to</h2>
+				<h2 style={!navigateur.includes("Chrome") ? {color: "black"} : {color: "white"}} >{translate("mobileMenuTitle")} </h2>
 
 				<Link className="mobileNav__menu-link" 
 					to="/" 
 					onClick={(e) => {setOpen();}}>
-						Home
-				</Link>
+						{translate("navMenu1")} </Link>
 
 				<Link className="mobileNav__menu-link" 
 					to="mywork" 
 					onClick={(e) => {setOpen();}}>
-						My work
-				</Link>
+						{translate("navMenu2")} </Link>
 
 				<Link className="mobileNav__menu-link" 
-					to="cv" 
+					to="skills" 
 					onClick={(e) => {setOpen();}}>
-						CV
-				</Link>
+						{translate("navMenu3")} </Link>
 
 				<Link className="mobileNav__menu-link" 
 					to="about" 
 					onClick={(e) => {setOpen();}}>
-						About me
-				</Link>
+						{translate("navMenu4")} </Link>
 
 				<Link className="mobileNav__menu-link" 
 					to="contact" 
 					onClick={(e) => {setOpen();}}>
-					Contact
-				</Link>
+					{translate("navMenu5")} </Link>
 			</Menu>
 		</nav>
 	)

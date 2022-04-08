@@ -1,4 +1,4 @@
-import CV from '../Pages/CV/CV';
+import CV from '../Pages/Skills/Skills';
 import { render, screen } from '@testing-library/react';
 import ReactDOM from 'react-dom';
 

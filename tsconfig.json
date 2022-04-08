@@ -26,6 +26,5 @@
 	"types": ["node", "jest", "@testing-library/jest-dom"],
 	"setupFilesAfterEnv": [
 		"./src/setupTests.js"
-	],
-	"allowTestingFrameworkSetupHook": ["BeforeEach", "AfterEach"]
+	]
 }

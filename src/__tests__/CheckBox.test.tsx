@@ -1,4 +1,4 @@
-import CheckBox from '../Components/CheckBox/CheckBox';
+import {CheckBox} from '../Components/CheckBox/CheckBox';
 import { render, screen } from '@testing-library/react';
 import ReactDOM from 'react-dom';
 import React from "react";

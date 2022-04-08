@@ -1,4 +1,4 @@
-export const WorkSampleDatas:WorkSampleProps[] = [
+export const WorkSampleDatas:WorkSamplesProps[] = [
 	{
 		"title": "Equine therapy",
 		"image": `${process.env.PUBLIC_URL}/assets/equimed.webp`,
@@ -9,7 +9,7 @@ export const WorkSampleDatas:WorkSampleProps[] = [
 	{
 		"title": "Portfolio",
 		"image": `${process.env.PUBLIC_URL}/assets/portfolio.webp`,
-		"description": "This is my portfolio. You are already on this, but if you like infinite loops like a bugged code, click on it !",
+		"description": "This is my portfolio. You are already on this, but if you like infinite loops, click on it !",
 		"githubLink": "https://github.com/Ngc1987/portfolio",
 		"liveDemoLink": "https://thomasemeriaportfolio.netlify.app/",
 	},
@@ -37,7 +37,7 @@ export const WorkSampleDatas:WorkSampleProps[] = [
 	},
 ]
 
-export interface WorkSampleProps {
+export interface WorkSamplesProps {
 	title: string;
 	image: string;
 	description: string;

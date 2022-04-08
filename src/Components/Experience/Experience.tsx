@@ -11,9 +11,10 @@ type Props = {
 	dates: string;
 	index: number;
 	showExp: boolean;
+	translate: (key: string) => void;
 }
 
-const Experience:React.FC<Props> = ({employer, job, dates, index, showExp}) => {
+const Experience:React.FC<Props> = ({employer, job, dates, index, showExp, translate}) => {
 
 	return (
 		<article className=
@@ -32,11 +33,11 @@ const Experience:React.FC<Props> = ({employer, job, dates, index, showExp}) => {
 													<GiChimney/>
 					}
 				</div>
-				<div className="experience__header-employer" tabIndex={0}>{employer}</div>
+				<div className="experience__header-employer" tabIndex={0}>{translate(`cvExperienceEmployer${index}`)} </div>
 			</div>
 			<div className="experience__content">
-				<div className="experience__content-job" tabIndex={0}>{job}</div>
-				<div className="experience__content-date" tabIndex={0}>{dates}</div>
+				<div className="experience__content-job" tabIndex={0}>{translate(`cvExperienceJob${index}`)} </div>
+				<div className="experience__content-date" tabIndex={0}>{translate(`cvExperienceDates${index}`)} </div>
 			</div>
 		</article>
 	)

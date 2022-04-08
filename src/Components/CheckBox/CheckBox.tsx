@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import "./CheckBox.scss";
 
-type Props = {
+export type CheckBoxProps = {
+	/** Boolean state to know if the language is in alien language */
 	inAlien: boolean;
+	/** Set state function to change the language between alien or earth language */
 	changeTextLanguage: () => void;
 };
 
-const CheckBox:React.FC<Props> = ({inAlien, changeTextLanguage}) => {
+
+/**
+ * Renders a custom checkbox to change the language
+ * 
+ * @template CheckBoxProps 
+ * @category Component
+ * @default CheckBox
+ */
+export function CheckBox({inAlien, changeTextLanguage}:CheckBoxProps):ReactElement {
 
 	const ariaChangeLanguage = (e:any) => {
 		// console.log(e.charCode)
@@ -29,5 +39,3 @@ const CheckBox:React.FC<Props> = ({inAlien, changeTextLanguage}) => {
 		</label>
 	)
 };
-
-export default CheckBox;

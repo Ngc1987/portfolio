@@ -1,0 +1,19 @@
+{
+		"entryPoints": [
+			"src/index.tsx",
+			"src/Components/CheckBox/CheckBox.tsx",
+			"src/Components/Loader/Loader.tsx",
+			"src/Pages/About/About.tsx",
+			"src/Pages/Contact/Contact.tsx",
+			"src/Pages/CV/CV.tsx",
+			"src/Pages/Home/Home.tsx",
+			"src/Pages/MyWork/MyWork.tsx"
+		],
+		"exclude": "test.tsx",
+		"out": "docs",
+		"categoryOrder": [
+			"Pages",
+			"Components",
+			"*"
+		]
+}

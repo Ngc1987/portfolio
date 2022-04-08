@@ -1,25 +1,32 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useContext } from 'react';
 import './App.scss';
 
 import Stars from './Components/Stars/Stars';
-import Loader from './Components/Loader/Loader';
+import {Loader} from './Components/Loader/Loader';
 import NameTitle from './Components/NameTitle/NameTitle';
 import DesktopNav from './Components/DesktopNav/DesktopNav';
 import MobileNav from './Components/MobileNav/MobileNav';
 import MobileTitle from './Components/MobileTitle/MobileTitle';
+import ChangeLanguage from './Components/ChangeLanguage/ChangeLanguage';
 
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import useWindowSize, {WindowSize} from './Hooks/useWindowSize';
+import useWindowSize from './Hooks/useWindowSize';
+
+import { LangContext } from './Context/lang';
+
 
 const Home = React.lazy(() => import("./Pages/Home/Home"));
 const MyWork = React.lazy(() => import("./Pages/MyWork/MyWork"));
-const CV = React.lazy(() => import("./Pages/CV/CV"));
+const Skills = React.lazy(() => import("./Pages/Skills/Skills"));
 const About = React.lazy(() => import("./Pages/About/About"));
 const Contact = React.lazy(() => import("./Pages/Contact/Contact"));
 
 
 function App() {
+
+	
+	const { dispatch: { translate }} = useContext(LangContext);
 
 	// Taking the window width for the size of the title element
 	const dimensions = useWindowSize();
@@ -47,7 +54,7 @@ function App() {
 		setTimeout(() => {
 			setShowTitle(false);
 			setShowContent(true)
-		}, 7000)
+		}, 700)
 	})
 
   	return (
@@ -62,42 +69,46 @@ function App() {
 			<div className={`App__content ${showContent ? "show" : "hide"}`} >
 
 				{dimensions.width > 767 ?
-					<DesktopNav />
+					<DesktopNav translate={translate} />
 					:
 					<>
-						<MobileTitle/>
+						<MobileTitle translate={translate}/>
 						<MobileNav 
 						isOpen={isOpen}
 						setOpen={setOpen}
 						onToggle={onToggle}
-						handleOnClose={handleOnClose}/>
+						handleOnClose={handleOnClose}
+						translate={translate} />
 					</>
 				}
+
+
+				<ChangeLanguage screen={dimensions.width > 767 ? "large" : "small"} />
 
 				<Routes>
 					<Route path="/" element={
 						<React.Suspense fallback={<Loader className="page__loader" />}>
-							<Home/>
+							<Home translate={translate} />
 						</React.Suspense>
 					}/>
 					<Route path="/mywork" element={
 						<React.Suspense fallback={<Loader className="page__loader" />}>
-							<MyWork/>
+							<MyWork translate={translate}/>
 						</React.Suspense>
 					}/>
-					<Route path="/cv" element={
+					<Route path="/skills" element={
 						<Suspense fallback={<Loader className="page__loader" />}>
-							<CV/>
+							<Skills translate={translate}/>
 						</Suspense>
 					}/>
 					<Route path="/about" element={
 						<React.Suspense fallback={<Loader className="page__loader" />}>
-							<About/>
+							<About translate={translate}/>
 						</React.Suspense>
 					}/>
 					<Route path="/contact" element={
 						<React.Suspense fallback={<Loader className="page__loader" />}>
-							<Contact/>
+							<Contact translate={translate}/>
 						</React.Suspense>
 					}/>
 				</Routes>

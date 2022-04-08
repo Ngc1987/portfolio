@@ -1,33 +1,49 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import "./Home.scss";
 
 import Earth from '../../Components/Earth/Earth';
 import FlyingAlien from '../../Components/FlyingAlien/FlyingAlien';
 
 
-const Home:React.FC = () => {
+export type HomeProps = {
+	children?: ReactElement;
+	translate: (key: string) => void;
+}
+
+/**
+ * Renders the Home page
+ * 
+ * @component
+ * 
+ * ```tsx
+ *		<Home/>
+ * ```
+ * 
+ * @category Pages
+ */
+function Home({children, translate}:HomeProps):ReactElement {
 
 	return (
 		
 		<main className="home" >
 
 			<section className="home__description">
-				<h1 tabIndex={0} >Hi everyone, i'm 
+				<h1 tabIndex={0} >{translate("homeH1PartOne")}
 					<em className="alienFont" >mwncbzudz grge </em>
-					<span></span> and i come from 
+					<span></span> {translate("homeH1PartTwo")} 
 					<em className="alienFont" >sfdhbjbty</em>
 				</h1>
 				<br />
 				<br />
-				<p tabIndex={0}>In your planet, you can call me Thomas Semeria.</p>
+				<p tabIndex={0}>{translate("homeText1")} </p>
 				<br />
-				<p tabIndex={0}>I'm a front-end developer, and open to work on Earth.</p>
+				<p tabIndex={0}>{translate("homeText2")} </p>
 				<br />
-				<p tabIndex={0}>Don't worry, my flying saucer is working with antimatter and not Earth petrol, so it's not a problem for me to fly to your beautiful planet.</p>
+				<p tabIndex={0}>{translate("homeText3")} </p>
 				<br />
-				<p tabIndex={0}>And if you need me really fast, i can come with my pocket teleporter.</p>
+				<p tabIndex={0}>{translate("homeText4")} </p>
 				<br />
-				<p tabIndex={0}>Visit the other pages of my portfolio to see some work of me, to know me a little more, to check my experience or to contact me.</p>
+				<p tabIndex={0}>{translate("homeText5")} </p>
 			</section>
 
 			<section className="home__anim">

@@ -37,7 +37,6 @@ export const ExperiencesDatas:ExperienceProps[] = [
 	{
 		"employer": "McDonald's",
 		"job": "Formator",
-		"job2": "Versatile crew",
 		"dates": "03/2005 to 11/2005",
 	},
 	{

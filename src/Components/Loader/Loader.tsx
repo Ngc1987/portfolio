@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { PropsWithChildren, ReactElement } from 'react';
 import "./Loader.scss";
 
-type Props = {
-	className?: string;
+export type LoaderProps = {
+	/** The class name of the loader, page__loader or smallPic__loader */
+	className: string;
 }
 
-const Loader:React.FC<Props> = ({className}) => {
+
+/**
+ * Renders a loader
+ * 
+ * @template LoaderProps 
+ * @category Component
+ * @default Loader
+ * @returns A beautiful glow loader
+ */
+export function Loader({className}:LoaderProps):ReactElement  {
   return (
 	<div className={className} data-testid="loader" >
 		<div className={`${className}__ring`}>
@@ -13,5 +23,3 @@ const Loader:React.FC<Props> = ({className}) => {
 	</div>
   )
 }
-
-export default Loader

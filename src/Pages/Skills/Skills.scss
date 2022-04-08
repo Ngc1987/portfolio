@@ -54,11 +54,11 @@
 			justify-content: space-evenly;
 			align-items: center;
 			color: #fff;
-			font-size: 1.5rem;
+			font-size: 1.7rem;
 			
 			em {
 				font-family: klingon;
-				font-size: 1.5rem;
+				// font-size: 1.9rem;
 			}
 			
 			p:nth-child(1) {
@@ -68,6 +68,7 @@
 			p:nth-child(3) {
 				padding: 0 10px;
 				color: #ffd000;
+				white-space: pre-line;
 			}
 		}
 
@@ -292,15 +293,16 @@
 				inset 0 0 15px #ff5d6d,
 				;
 				transition: all 0.5s ease;
-
+				
 				a {
 					height: 30px;
+					font-size: 1.5rem;
 					display: flex;
 					justify-content: center;
 					align-items: center;
 					color: #fff;
 					cursor: pointer;
-					font-size: 1.2rem;
+					text-decoration: none;
 				}
 			}
 		}
@@ -314,6 +316,22 @@
 	height: 60px;
 }
 
+@media screen and(max-width: 500px) {
+	.cv {
+
+		&__content {
+
+			&__language {
+				display: flex;
+				flex-direction: column;
+
+				p {
+					margin: 10px 0px;
+				}
+			}
+		}
+	}
+}
 @media screen and(min-width: 410px) {
 	.cv {
 

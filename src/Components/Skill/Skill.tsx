@@ -9,6 +9,10 @@ type Props = {
 	 * Type of the skill 
 	 * */
 	name: string;
+	/** The translate function */
+	translate: (key: string) => void;
+	/** Index of the element on the data array */
+	index: number;
 }
 
 /**
@@ -30,7 +34,7 @@ type Props = {
  * 		<Skill name={name}/>
  * 	)
  */
-const Skill:React.FC<Props> = ({name}: Props) => {
+const Skill:React.FC<Props> = ({name, translate, index}: Props) => {
 	
 	return (
 
@@ -57,25 +61,7 @@ const Skill:React.FC<Props> = ({name}: Props) => {
 				name === "jest" ? <SiJest/> : 
 									<SiW3C/>
 			}
-			<p>
-				{
-				name === "html" ? "HTML" : 
-				name === "css" ? "CSS": 
-				name === "javascript" ? "Javascript" : 
-				name === "react" ? "React" : 
-				name === "github" ? "Github" : 
-				name === "git" ? "Git" : 
-				name === "typescript" ? "Typescript" : 
-				name === "sass" ? "Sass" : 
-				name === "terminal" ? "Terminal": 
-				name === "redux" ? "Redux" : 
-				name === "mongo" ? "MongoDb" : 
-				name === "tailwind" ? "Tailwind CSS" : 
-				name === "responsive" ? "Responsives websites" : 
-				name === "jest" ? "Jest" : 
-									"Web accessibility"
-			}
-			</p>
+			<p>{translate(`cvSkill${index}`)} </p>
 		</div>
 	)
 }

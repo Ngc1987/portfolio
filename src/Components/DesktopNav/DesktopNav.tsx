@@ -1,7 +1,14 @@
-import React, { useEffect, useRef } from 'react';
+import React, { ReactElement, useEffect, useRef } from 'react';
 import "./DesktopNav.scss";
 import usePathname from '../../Hooks/usePathname';
 import {Link} from "react-router-dom";
+
+import ChangeLanguage from '../ChangeLanguage/ChangeLanguage';
+
+
+export type DesktopNavProps = {
+	translate: (key: string) => void;
+}
 
 /**
  * Component DesktopNav
@@ -15,7 +22,7 @@ import {Link} from "react-router-dom";
  * @example <DesktopNav/>
  * @return  React.ReactNode
  */
-const DesktopNav:React.FC = () => {
+function DesktopNav({translate}:DesktopNavProps):ReactElement {
 	
 
 	// Select the ball div element
@@ -43,7 +50,7 @@ const DesktopNav:React.FC = () => {
 				elem.style.background = "#b65dff";
 				elem.style.boxShadow = "0 0 15px #b65dff, 0 0 30px #b65dff, 0 0 45px #b65dff, 0 0 60px #b65dff";
 				break;
-			case "/cv" :
+			case "/skills" :
 				elem.style.background = "#ff5d6d";
 				elem.style.boxShadow = "0 0 15px #ff5d6d, 0 0 30px #ff5d6d, 0 0 45px #ff5d6d, 0 0 60px #ff5d6d";
 				break;
@@ -69,36 +76,36 @@ const DesktopNav:React.FC = () => {
 					className="desktopNav__link" 
 					to="/"
 					data-testid="desktopNavLink" >
-					Home
-			</Link> 
+					{translate("navMenu1")} </Link>
+
 			<Link onMouseMove={(e) => customizeMarker(e)} 
 					className="desktopNav__link" 
 					to="/mywork"
 					data-testid="desktopNavLink" >
-					My work
-			</Link>
+					{translate("navMenu2")} </Link>
+
 			<Link onMouseMove={(e) => customizeMarker(e)} 
 					className="desktopNav__link" 
-					to="/cv"
+					to="/skills"
 					data-testid="desktopNavLink" >
-					CV
-			</Link>
+					{translate("navMenu3")} </Link>
+
 			<Link onMouseMove={(e) => customizeMarker(e)} 
 					className="desktopNav__link" 
 					to="/about"
 					data-testid="desktopNavLink" >
-					About me
-			</Link>
+					{translate("navMenu4")} </Link>
+
 			<Link onMouseMove={(e) => customizeMarker(e)} 
 					className="desktopNav__link" 
 					to="/contact"
 					data-testid="desktopNavLink" >
-					Contact
-			</Link>
+					{translate("navMenu5")} </Link>
 		
 			<div id="marker" ref={marker}>
 				<div className="ball" ref={ball}></div>
 			</div>
+
 		</nav>
 	)
 }

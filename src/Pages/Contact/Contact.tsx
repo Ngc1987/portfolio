@@ -1,20 +1,38 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import "./Contact.scss";
 
 import ContactLink from "../../Components/ContactLink/ContactLink";
 import ContactForm from "../../Components/ContactForm/ContactForm";
 
 
-const Contact:React.FC = () => {
+export type ContactProps = {
+	translate: (key: string) => void;
+}
+
+/**
+ * Renders the Contact page
+ * 
+ * @component
+ * 
+ * ```tsx
+ * <Route path="/about" element={
+ *		<React.Suspense fallback={<Loader className="page__loader" />}>
+ *				<Contact/>
+ *		</React.Suspense>
+ *	}/>
+ * ```
+ * 
+ * @category Pages
+ */
+export function Contact({translate}:ContactProps):ReactElement {
 
 	return (
 		<main className="contact" >
 			<section className="contact__description">
 				<h1 tabIndex={0}>
-					Here are the links through which you can follow or contact me.
-				</h1>
+					{translate("contactH1")} </h1>
 				<br />
-				<p tabIndex={0}>You can also complete the below form.</p>
+				<p tabIndex={0}>{translate("contactText1")} </p>
 			</section>
 			<section className="contact__links">
 				<ContactLink type="linkedin" />
@@ -23,7 +41,7 @@ const Contact:React.FC = () => {
 				<ContactLink type="github" />
 			</section>
 			<section className="contact__form">
-				<ContactForm/>
+				<ContactForm translate={translate} />
 			</section>
 
 		</main>

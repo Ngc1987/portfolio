@@ -1,15 +1,37 @@
-import React, { useEffect, useState } from "react";
-import "./CV.scss";
+import React, { ReactElement, useEffect, useState } from "react";
+import "./Skills.scss";
 
-import CheckBox from "../../Components/CheckBox/CheckBox";
+import {CheckBox} from "../../Components/CheckBox/CheckBox";
 import Skill from "../../Components/Skill/Skill";
 import Experience from "../../Components/Experience/Experience";
 
 import {ExperiencesDatas} from "../../Datas/CvExperiencesDatas";
+import {SkillsDatas} from "../../Datas/SkillsDatas";
+
 import { IoIosArrowDown } from 'react-icons/io';
 
-const CV:React.FC = () => {
 
+export type SkillsProps = {
+	translate: (key: string) => void;
+}
+/**
+ * Renders the Cv page
+ * 
+ * @component
+ * 
+ * ```tsx
+ * <Route path="/about" element={
+ *		<React.Suspense fallback={<Loader className="page__loader" />}>
+ *				<CV/>
+ *		</React.Suspense>
+ *	}/>
+ * ```
+ * 
+ * @category Pages
+ */
+export function CV({translate}:SkillsProps):ReactElement {
+
+	console.log(translate)
 
 	// State for the download menu
 	const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -20,7 +42,7 @@ const CV:React.FC = () => {
 	// State for the text to show just below the skills samples
 	const [index, setIndex] = useState<number>(0);
 
-	console.log(index)
+	// console.log(index)
 	
 	useEffect(() => {
 		const interval: NodeJS.Timer = setInterval(() => {
@@ -56,22 +78,22 @@ const CV:React.FC = () => {
 	return (
 		<main className={`cv ${inAlien && "alienFont"}`} >
 			<section className="cv__description">
-				<h1 tabIndex={0}>On this page you can read or download my curriculum vitae.</h1>
+				<h1 tabIndex={0}>{translate("cvDescriptionH1")} </h1>
 				<br />
-				<p tabIndex={0}>To facilitate the work of each person, whatever where you come from, the CV can be read in english language, the more popular on Earth, as well as in the language of my planet.</p>
+				<p tabIndex={0}>{translate("cvDescriptionText1")} <em className="alienFont" >sfdhbjbty</em></p>
 				<br />
-				<p tabIndex={0}>Click on the button below to change the language, and enjoy reading about my past experience.</p>
+				<p tabIndex={0}>{translate("cvDescriptionText2")} </p>
 			</section>
 
 			<section className="cv__content">
 				<div className="cv__content__language">
-					<p className="humanFont" tabIndex={0} >Earth language</p>
+					<p className="humanFont" tabIndex={0} >{translate("cvContentText1")} </p>
 					<CheckBox inAlien={inAlien} 
 								changeTextLanguage={changeTextLanguage} />
 					<p className="humanFont" tabIndex={0}>
-						<span style={{fontSize: "1.1rem", marginRight: "5px"}} 
-							  className="alienFont">ZXOOKG  
-						</span>language
+						<em style={{fontSize: "1.5rem", marginRight: "5px"}} 
+							  className="alienFont">sfdhbjbty  
+						</em>{translate("cvContentText2")} 
 					</p>
 				</div>
 
@@ -82,46 +104,34 @@ const CV:React.FC = () => {
 							<img src={process.env.PUBLIC_URL + "assets/alien.webp"} alt="Profile pic of Thomas" title="Profile pic of alien version of Thomas" tabIndex={0}/>
 						</div>
 						<div className="cv__content__cv-intro">
-							<h2 tabIndex={0}>Here's a sample of my tools and technologies i use to make beautiful websites and applications you need:</h2>
+							<h2 tabIndex={0}>{translate("cvContentH2")} </h2>
 						</div>
 					</div>
 
 					<div className="cv__content__cv-skills">
-						<Skill name="html" />
-						<Skill name="css" />
-						<Skill name="tailwind" />
-						<Skill name="sass" />
-						<Skill name="javascript" />
-						<Skill name="typescript" />
-						<Skill name="react" />
-						<Skill name="redux" />
-						<Skill name="jest" />
-						<Skill name="mongo" />
-						<Skill name="git" />
-						<Skill name="github" />
-						<Skill name="terminal" />
-						<Skill name="responsive" />
-						<Skill name="w3c" />
+
+						{SkillsDatas.map((skill, index) => {
+							return <Skill key={index} index={index} name ={skill.name} translate={translate}/>
+						})}
 
 						<div className="cv__content__cv-skills-text" data-testid="skillsText" >
-							<p className={index === 0 ? "showText" : "hideText"} tabIndex={0} >I love bringing life to new ideas and projects, technically and visually.</p>
-							<p className={index === 1 ? "showText" : "hideText"} tabIndex={0} >I think the users experience must be the priority, and be pleasant and enjoying. And it's important for all the users.</p>
+							<p className={index === 0 ? "showText" : "hideText"} tabIndex={0} >{translate("cvSkillsText1")} </p>
+							<p className={index === 1 ? "showText" : "hideText"} tabIndex={0} >{translate("cvSkillsText2")} </p>
 							
-							<p className={index === 2 ? "showText" : "hideText"} tabIndex={0} >I'm a fast learner and challenges lover, and i can adapt to new technologies and learn quickly.</p>
-							<p className={index === 3 ? "showText" : "hideText"} tabIndex={0} >Also i know the respect of the mock-up is strongly important, with me you can be sure you'll can play at the seven differences game between your mock-up and the final project, and find none.</p>
+							<p className={index === 2 ? "showText" : "hideText"} tabIndex={0} >{translate("cvSkillsText3")} </p>
+							<p className={index === 3 ? "showText" : "hideText"} tabIndex={0} >{translate("cvSkillsText4")} </p>
 							
-							<p className={index === 4 ? "showText" : "hideText"} tabIndex={0} >Entrust me your project, some instructions and the mock-up, and 
-							you have the insurance i will make this with serious, rigor, my best skills and my bigger smile 😃</p>
+							<p className={index === 4 ? "showText" : "hideText"} tabIndex={0} >{translate("cvSkillsText5")} </p>
 
 						</div>
 					</div>
 				</section>
 
 				<section className="cv__content__experiences">
-					<h2 tabIndex={0}>Experiences</h2>
-					<p tabIndex={0}>You can download the CV by pressing the button located below this section to see the job descriptions and more details on it.</p>
+					<h2 tabIndex={0}>{translate("cvExperiencesH2")} </h2>
+					<p tabIndex={0}>{translate("cvExperiencesText1")} </p>
 					<br />
-					<p tabIndex={0}>You also can see my human face on this.</p>
+					<p tabIndex={0}>{translate("cvExperiencesText2")} </p>
 					<section className={`cv__content__experiences-articles ${isExperienceOpen ? "open" : "close"}`}>
 						{
 							ExperiencesDatas.map((obj, index) => {
@@ -132,6 +142,7 @@ const CV:React.FC = () => {
 												key={200 + index}
 												index={index}
 												showExp={isExperienceOpen}
+												translate={translate}
 									 />
 								)
 							})
@@ -139,7 +150,7 @@ const CV:React.FC = () => {
 
 					</section>
 						<div className="cv__content__experiences-next" >
-							<p>If you want you can see my olders experiences by clicking the below arrow, not from the dev world but it's experiences:</p>
+							<p>{translate("cvExperiencesText3")} </p>
 							<IoIosArrowDown 
 									onClick={toggleShowExperiences}
 									onKeyPress={toggleShowExperiences}
@@ -153,12 +164,11 @@ const CV:React.FC = () => {
 					<div className="cv__content__download-button" 
 						 onClick={showLanguages}
 						 onKeyPress={showLanguages}
-						  tabIndex={0} >Download CV
-					</div>
+						  tabIndex={0} >{translate("cvDownloadButton")} </div>
 					
 					<div className={`cv__content__download-language ${isOpen ? "showLanguage" : "hideLanguage"}`}>
-						<a href={process.env.PUBLIC_URL + "assets/Cv/CvThomasFR.pdf"} download onClick={showLanguages} tabIndex={0} onKeyPress={showLanguages} >In french</a>
-						<a href={process.env.PUBLIC_URL + "assets/Cv/CvThomasEN.pdf"} download onClick={showLanguages} tabIndex={0} onKeyPress={showLanguages} >In english</a>
+						<a href={process.env.PUBLIC_URL + "assets/Cv/CvThomasFR.pdf"} download onClick={showLanguages} tabIndex={0} onKeyPress={showLanguages} >{translate("cvDownloadText1")} </a>
+						<a href={process.env.PUBLIC_URL + "assets/Cv/CvThomasEN.pdf"} download onClick={showLanguages} tabIndex={0} onKeyPress={showLanguages} >{translate("cvDownloadText2")} </a>
 					</div>
 				</div>
 			</section>

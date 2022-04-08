@@ -1,19 +1,22 @@
 import React from 'react';
 import "./WorkSample.scss";
-
-import Loader from '../Loader/Loader';
-
 import { ImGithub } from 'react-icons/im';
 import { GiEarthAmerica } from 'react-icons/gi';
-import { WorkSampleProps } from '../../Datas/WorkSampleDatas';
+import { WorkSamplesProps } from '../../Datas/WorkSampleDatas';
 
 
-const WorkSample:React.FC<WorkSampleProps> = ({title, image, description, githubLink, liveDemoLink, inProgress}) => {
+interface WorkSampleProps extends WorkSamplesProps {
+	translate: (key: string) => void;
+	index: number;
+}
+
+const WorkSample:React.FC<WorkSampleProps> = ({title, image, description, githubLink, liveDemoLink, inProgress, index, translate}) => {
+	console.log(index)
 	
 	return (
 		<article className="workSample" data-testid="workSample">
 			<div className="workSample__title">
-				<h2 tabIndex={0}>{title}</h2>
+				<h2 tabIndex={0}>{translate(`myWorkTitle${index}`)} </h2>
 			</div>
 			<div className="workSample__image">
 				{inProgress ? 
@@ -28,13 +31,11 @@ const WorkSample:React.FC<WorkSampleProps> = ({title, image, description, github
 					<p className="inProgress__text">In progress...</p>
 				</>
 					:
-					<React.Suspense fallback={<Loader className="smallPic__loader" />}>
-						<img src={image} alt={`Sample pic of ${title} website`} tabIndex={0} />
-					</React.Suspense>
+					<img src={image} alt={`Sample pic of ${title} website`} tabIndex={0} />
 				}
 			</div>
 			<div className="workSample__description">
-				<p tabIndex={0}>{description}</p>
+				<p tabIndex={0}>{translate(`myWorkDescription${index}`)} </p>
 			</div>
 			<div className="workSample__links">
 
