@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import "./WorkSample.scss";
 import { ImGithub } from 'react-icons/im';
 import { GiEarthAmerica } from 'react-icons/gi';
@@ -11,8 +11,12 @@ interface WorkSampleProps extends WorkSamplesProps {
 }
 
 const WorkSample:React.FC<WorkSampleProps> = ({title, image, description, githubLink, liveDemoLink, inProgress, index, translate}) => {
-	console.log(index)
 	
+
+	// const handleClick = (url: string):MouseEventHandler<HTMLAnchorElement> => {
+	// 	window.open(url);
+	// };
+		
 	return (
 		<article className="workSample" data-testid="workSample">
 			<div className="workSample__title">
@@ -43,19 +47,24 @@ const WorkSample:React.FC<WorkSampleProps> = ({title, image, description, github
 					githubLink === "" ?
 					<></>
 					:
-					// <div className="workSample__links-liveDemo">
-						
-						<a href={githubLink} className="workSample__links-github"><ImGithub  className="gitLogo"/> <p>GitHub repo</p> </a>
-					// </div>
+						<a href={githubLink} 
+							className="workSample__links-github"
+							target="_blank" 
+							rel="noreferrer noopener">
+								<ImGithub  className="gitLogo"/> 
+								<p>GitHub repo</p> 
+							</a>
 				}
 				{
 					liveDemoLink === "" ?
 					<></>
 					:
-					// <div className="workSample__links-liveDemo">
-						
-						<a href={liveDemoLink} className="workSample__links-liveDemo"><GiEarthAmerica className="liveLogo"/>{liveDemoLink.includes("npmjs") ? "Npm repo" : "Live demo"}</a>
-					// </div>
+						<a href={liveDemoLink} 
+							target="_blank" 
+							rel="noreferrer noopener"
+							className="workSample__links-liveDemo">
+								<GiEarthAmerica className="liveLogo"/>{liveDemoLink.includes("npmjs") ? "Npm repo" : "Live demo"}
+						</a>
 				}
 			</div>
 		</article>
