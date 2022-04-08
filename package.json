@@ -64,11 +64,5 @@
 		"hamburger-react": "^2.4.1",
 		"jsdoc": "^3.6.10",
 		"typedoc": "^0.22.13"
-	},
-	"jest": {
-		"unmockedModulePathPatterns": [
-			"node_modules/react/",
-			"node_modules/enzyme/"
-		]
 	}
 }

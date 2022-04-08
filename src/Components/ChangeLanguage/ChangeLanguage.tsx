@@ -1,13 +1,20 @@
-import React, {useCallback, useState, useEffect, useRef, useContext, ReactElement} from "react";
+import {useCallback, useState, useEffect, useRef, useContext, ReactElement} from "react";
 import "./ChangeLanguage.scss"
 
 import { LangContext } from "../../Context/lang";
 
-interface ChangeLanguageProps {
-	screen?: string;
+export interface ChangeLanguageProps {
+	screen: string;
 }
 
-function ChangeLanguage({screen}: ChangeLanguageProps):ReactElement {
+/**
+ * Component who show the language flag. Click on it to change the language between the availables
+ * 
+ * @template ChangeLanguageProps 
+ * @category Component
+ * @default ChangeLanguage
+ */
+export function ChangeLanguage({screen}: ChangeLanguageProps):ReactElement {
 
 	const {state: {language}, dispatch: {setLanguage, translate}} = useContext(LangContext);
 	const [showDropdown, setShowDropdown] = useState(false);

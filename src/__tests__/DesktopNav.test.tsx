@@ -2,21 +2,25 @@ import DesktopNav from '../Components/DesktopNav/DesktopNav';
 import { render, screen } from '@testing-library/react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import { LangContext } from '../Context/lang';
+import { useContext } from 'react';
 
 describe('DesktopNav component', () => {
+
+	const { dispatch: { translate }} = useContext(LangContext);
 
 	const container:HTMLDivElement = document.createElement('div');
 	test("should render without crash", () => {
   			ReactDOM.render(
 				<BrowserRouter>
-                	<DesktopNav/>
+                	<DesktopNav translate={translate} />
 				</BrowserRouter>
 			  , container);
 	})
     test('should show its content on the page',  () => {
         render(
 			<BrowserRouter>
-				<DesktopNav/>
+				<DesktopNav translate={translate} />
 			</BrowserRouter>
 		);
 

@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, ReactElement } from 'react';
+import { ReactElement } from 'react';
 import "./Loader.scss";
 
 export type LoaderProps = {
@@ -8,12 +8,11 @@ export type LoaderProps = {
 
 
 /**
- * Renders a loader
+ * Renders a beautiful glow loader
  * 
  * @template LoaderProps 
  * @category Component
  * @default Loader
- * @returns A beautiful glow loader
  */
 export function Loader({className}:LoaderProps):ReactElement  {
   return (

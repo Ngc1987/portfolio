@@ -22,6 +22,20 @@ export const WorkSampleDatas:WorkSamplesProps[] = [
 		"inProgress": true
 	},
 	{
+		"title": "KasaRent",
+		"image": `${process.env.PUBLIC_URL}/assets/kasa.webp`,
+		"description": "KasaRent, immo web site",
+		"githubLink": "https://github.com/Ngc1987/ThomasSemeria_11_20092021/tree/main/kasa",
+		"liveDemoLink": "https://kasarent.netlify.app/",
+	},
+	{
+		"title": "Sportsee App",
+		"image": `${process.env.PUBLIC_URL}/assets/sportsee.webp`,
+		"description": "Sportsee App, a dashboard to follow your performances",
+		"githubLink": "https://github.com/Ngc1987/-ThomasSemeria_12_14102021",
+		"liveDemoLink": "https://sportseeapp.netlify.app/",
+	},
+	{
 		"title": "ToDo application",
 		"image": `${process.env.PUBLIC_URL}/assets/todo.webp`,
 		"description": "This is a beautiful ToDo application, with a drag and drop function to manage your todos.",
