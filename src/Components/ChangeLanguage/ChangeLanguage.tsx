@@ -33,7 +33,6 @@ function ChangeLanguage({screen}: ChangeLanguageProps):ReactElement {
 		setLanguage(value);
 	}
 
-	console.log(language, showDropdown)
 
 	return(
 		<div className={`changeLanguage ${screen === "large" ? "large" : "small"} ${showDropdown ? "openLanguage" : "closeLanguage"}`}>
@@ -42,10 +41,6 @@ function ChangeLanguage({screen}: ChangeLanguageProps):ReactElement {
 				
 			<p className={`selected ${showDropdown ? "showFlag" : "hideFlag"}`} 
 				onClick={() => {setShowDropdown(!showDropdown); chooseLanguageHandler(language === "fr" ? "en" : "fr")}}>{language === "en" ? "🇫🇷" : "🏴󠁧󠁢󠁥󠁮󠁧󠁿"}</p>
-
-			{/* <p className={`selected ${showDropdown ? "showFlag" : "hideFlag"}`} 
-				onClick={() => {setShowDropdown(!showDropdown); chooseLanguageHandler("en")}}
-					>🏴󠁧󠁢󠁥󠁮󠁧󠁿</p> */}
 
 		</div>
 	)
