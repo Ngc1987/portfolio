@@ -8,10 +8,12 @@ import DesktopNav from './Components/DesktopNav/DesktopNav';
 import MobileNav from './Components/MobileNav/MobileNav';
 import MobileTitle from './Components/MobileTitle/MobileTitle';
 import ChangeLanguage from './Components/ChangeLanguage/ChangeLanguage';
+import Error from "./Pages/Error/Error";
 
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import useWindowSize from './Hooks/useWindowSize';
+import usePathname from './Hooks/usePathname';
 
 import { LangContext } from './Context/lang';
 
@@ -30,6 +32,10 @@ function App() {
 
 	// Taking the window width for the size of the title element
 	const dimensions = useWindowSize();
+
+	// Taking the pathName
+	const pathName = usePathname();
+
 
 	// State and functions for the mobile device menu
 	const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -51,18 +57,28 @@ function App() {
 
 	//
 	useEffect(() => {
-		setTimeout(() => {
+
+		if(pathName === "/") {
+			setTimeout(() => {
+				setShowTitle(false);
+				setShowContent(true)
+			}, 8000)
+		}else {
 			setShowTitle(false);
 			setShowContent(true)
-		}, 8000)
-	})
+
+		}
+	}, [pathName])
 
   	return (
 		<div className="App">
 
 			<img className="background" src={process.env.PUBLIC_URL + "assets/background.webp"} alt="Universe draw" />
 
-			<NameTitle className={`${showTitle ? "show" : "hide	"} ${dimensions.width < 768 ? "smallTitle" : "bigTitle"}`} />
+			{pathName === "/" &&
+				<NameTitle className={`${showTitle ? "show" : "hide	"} ${dimensions.width < 768 ? "smallTitle" : "bigTitle"}`} />
+			
+			}
 			
 			{showContent && <Stars />}
 
@@ -109,6 +125,11 @@ function App() {
 					<Route path="/contact" element={
 						<React.Suspense fallback={<Loader className="page__loader" />}>
 							<Contact translate={translate}/>
+						</React.Suspense>
+					}/>
+					<Route path="/*" element={
+						<React.Suspense fallback={<Loader className="page__loader" />}>
+							<Error/>
 						</React.Suspense>
 					}/>
 				</Routes>

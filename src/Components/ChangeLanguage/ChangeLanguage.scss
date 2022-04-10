@@ -47,25 +47,15 @@
 }
 
 .large {
-	position: absolute;
+	position: fixed;
 	left: 20px;
 	font-size: 2.5rem;
 	top: 20px;
 }
 
 .small {
-	position: absolute;
+	position: fixed;
 	left: 10px;
 	top: 10px;
 	font-size: 2.2rem;
 }
-
-// .showDropdown {
-// 	min-height: 100px;
-// 	max-height: 100px;
-// }
-// .hideDropdown {
-// 	min-height: 0px;
-// 	max-height: 0px;
-// 	// height: 0px;
-// }
