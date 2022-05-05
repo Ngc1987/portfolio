@@ -9,12 +9,12 @@
 	"myWorkH1": "Here is some samples of my work.",
 	"myWorkText1": "Click on 'Live demo' to visit the website, or click on the GitHub logo to see the code source on GitHub.",
 	"myWorkText2": "If you have some questions or just want to contact me, click on the 'Contact' button 👽",
-	"myWorkTitle0": "Equine mediation",
-	"myWorkDescription0": "This is a website for a therapist who make therapies with the help of Earth horses. ",
+	"myWorkTitle0": "UniverseGram",
+	"myWorkDescription0": "UniverseGram is the first social media inter-galaxys. Talk and share with other peoples of the universe 🪐. I build it with React, Redux, NodeJS, Express, and MongoDB.",
 	"myWorkTitle1": "My portfolio",
 	"myWorkDescription1": "This is my portfolio. You are already on this, but if you like infinite loops, click on it !",
-	"myWorkTitle2": "UniverseGram",
-	"myWorkDescription2": "UniverseGram is the first social media inter-galaxys. Talk and share with other peoples of the universe 🪐. I'll made it with React, Redux, NodeJS, Express, and MongoDB",
+	"myWorkTitle2": "Equine mediation",
+	"myWorkDescription2": "This is a website for a therapist who make therapies with the help of Earth horses.",
 	"myWorkTitle3": "KasaRent",
 	"myWorkDescription3": "Apartment rentals app. Fully accessible to keyboard navigation and screen readers",
 	"myWorkTitle4": "Sportsee App",
@@ -117,5 +117,10 @@
 	"navMenu3": "Skills",
 	"navMenu4": "About me",
 	"navMenu5": "Contact",
-	"mobileMenuTitle": "Navigate to"
+	"mobileMenuTitle": "Navigate to",
+	"formFirstNameError": "Your first name must contains at least 2 characters",
+	"formLastNameError": "Your first name must contains at least 2 characters",
+	"formEmailError": "Please leave a valid mail address",
+	"numberPhoneError": "Your number phone must contain 8 to 14 digits",
+	"messageError": "Please leave a message with at least 5 characters"
 }

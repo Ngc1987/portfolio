@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import "./NameTitle.scss";
 
 type Props = {
@@ -21,9 +21,10 @@ const NameTitle:React.FC<Props> = ({className}) => {
 	// Fetch the path length for each ref to set the css properties. Only needed for dev .
 	// useEffect(() => {
 	// 	// console.log(revealRefs);
-	// 	revealRefs.current.forEach((el) => {
+	// 	revealRefs.current.forEach((el, i) => {
 	// 		if(el instanceof SVGPathElement) {
 	// 			const line = el.getTotalLength();
+	// 			console.log(line, i)
 	// 		}
 	// 	})
 		

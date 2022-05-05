@@ -1,10 +1,11 @@
 export const WorkSampleDatas:WorkSamplesProps[] = [
 	{
-		"title": "Equine therapy",
-		"image": `${process.env.PUBLIC_URL}/assets/equimed.webp`,
-		"description": "This is a website for a therapist who make therapies with the help of Earth horses. ",
-		"githubLink": "https://github.com/Ngc1987/Mediation-equine",
-		"liveDemoLink": "https://domequimediation.netlify.app/",
+		"title": "UniverseGram",
+		"image": `${process.env.PUBLIC_URL}`,
+		"description": "UniverseGram is the first social media inter-galaxys. Talk and share with other peoples of the universe 🪐. I'll made it with React, Redux, NodeJS, Express, and MongoDB",
+		"githubLink": "https://github.com/Ngc1987/universegram",
+		"liveDemoLink": "",
+		"inProgress": true
 	},
 	{
 		"title": "Portfolio",
@@ -14,12 +15,11 @@ export const WorkSampleDatas:WorkSamplesProps[] = [
 		"liveDemoLink": "https://thomasemeriaportfolio.netlify.app/",
 	},
 	{
-		"title": "UniverseGram",
-		"image": `${process.env.PUBLIC_URL}`,
-		"description": "UniverseGram is the first social media inter-galaxys. Talk and share with other peoples of the universe 🪐. I'll made it with React, Redux, NodeJS, Express, and MongoDB",
-		"githubLink": "",
-		"liveDemoLink": "",
-		"inProgress": true
+		"title": "Equine therapy",
+		"image": `${process.env.PUBLIC_URL}/assets/equimed.webp`,
+		"description": "This is a website for a therapist who make therapies with the help of Earth horses. ",
+		"githubLink": "https://github.com/Ngc1987/Mediation-equine",
+		"liveDemoLink": "https://domequimediation.netlify.app/",
 	},
 	{
 		"title": "KasaRent",

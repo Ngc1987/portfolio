@@ -44,10 +44,10 @@ export function ChangeLanguage({screen}: ChangeLanguageProps):ReactElement {
 	return(
 		<div className={`changeLanguage ${screen === "large" ? "large" : "small"} ${showDropdown ? "openLanguage" : "closeLanguage"}`}>
 
-			<p onClick={() => setShowDropdown(!showDropdown)}>{language === "fr" ? "🇫🇷" : "🏴󠁧󠁢󠁥󠁮󠁧󠁿"}</p>
+			<img onClick={() => setShowDropdown(!showDropdown)} src={language === "fr" ? `${process.env.PUBLIC_URL}/assets/france.svg` : `${process.env.PUBLIC_URL}/assets/gb.svg`} alt="flag"></img>
 				
-			<p className={`selected ${showDropdown ? "showFlag" : "hideFlag"}`} 
-				onClick={() => {setShowDropdown(!showDropdown); chooseLanguageHandler(language === "fr" ? "en" : "fr")}}>{language === "en" ? "🇫🇷" : "🏴󠁧󠁢󠁥󠁮󠁧󠁿"}</p>
+			<img className={`selected ${showDropdown ? "showFlag" : "hideFlag"}`} 
+				onClick={() => {setShowDropdown(!showDropdown); chooseLanguageHandler(language === "fr" ? "en" : "fr")}} src={language === "en" ? `${process.env.PUBLIC_URL}/assets/france.svg` : `${process.env.PUBLIC_URL}/assets/gb.svg`} alt="flag"></img>
 
 		</div>
 	)

@@ -9,12 +9,12 @@
 	"myWorkH1": "Ici tu trouveras quelques exemples de projets que j'ai réalisé.",
 	"myWorkText1": "Cliques sur 'Live demo' pour visiter le site, ou sur 'Github repo' pour consulter le code source.",
 	"myWorkText2": "Si tu as des questions ou souhaites juste me contacter, cliques sur le bouton 'Contact' 👽",
-	"myWorkTitle0": "Médiation équine",
-	"myWorkDescription0": "C'est un site web produit pour une thérapeute, qui promulgue ses soins à l'aide de chevaux terriens.",
+	"myWorkTitle0": "UniverseGram",
+	"myWorkDescription0": "UniverseGram est le premier réseau social inter-galaxies. Parles et partages avec d'autres personnes de tout l'univers 🪐. Ce site sera construit avec React, Redux, NodeJS, Express, et MongoDB.",
 	"myWorkTitle1": "Mon portfolio",
 	"myWorkDescription1": "C'est mon portfolio. Tu es déjà dessus, mais si tu aimes les boucles infinies, cliques dessus !",
-	"myWorkTitle2": "UniverseGram",
-	"myWorkDescription2": "UniverseGram est le premier réseau social inter-galaxies. Parles et partages avec d'autres personnes de tout l'univers 🪐. Ce site sera construit avec React, Redux, NodeJS, Express, et MongoDB",
+	"myWorkTitle2": "Médiation équine",
+	"myWorkDescription2": "C'est un site web produit pour une thérapeute, qui promulgue ses soins à l'aide de chevaux terriens.",
 	"myWorkTitle3": "KasaRent",
 	"myWorkDescription3": "Application de locations d'appartements. Entièrement accessible à la navigation au clavier et au lecteur d'écrans",
 	"myWorkTitle4": "Sportsee App",
@@ -111,5 +111,10 @@
 	"mobileTitle/mywork": "Mon travail",
 	"mobileTitle/skills": "Compétences",
 	"mobileTitle/about": "A propos",
-	"mobileTitle/contact": "Contact"
+	"mobileTitle/contact": "Contact",
+	"formFirstNameError": "Votre prénom doit contenir au moins 2 caractères",
+	"formLastNameError": "Votre nom doit contenir au moins 2 caractères",
+	"formEmailError": "Veuillez saisir un email valide",
+	"numberPhoneError": "Votre numéro de téléphone doit contenir entre 8 et 4 caractères",
+	"messageError": "Veuillez saisir un message de 5 caractères minimum"
 }
